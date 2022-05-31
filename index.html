@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MY FAIRYTALE</title>
+    <link rel="icon" sizes="192x192" href="imagenes/logo.png">
+    <!--fontawesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+    <!--hoja de estilos-->
+    <link rel="stylesheet" href="css/estilos.css">
+    <!--meta-->
+    <meta name="description"
+        content="Ten la oportunidad de comprar las muñeca de tus sueños en My FairyTale, desde Monster High hasta Rainbow High, variedad y calidad a tu alcance" />
+    <meta name="keywords"
+        content="muñecas, Monsterhigh, everafterhigh, rainbowhigh, barbie, coleccion, latinoamerica" />
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="header__contenedor">
+                <div>
+                    <a class="categorias--sidebar" href="#sidebar"><i class="fas fa-bars"></i></a>
+                    <ul class="categorias" id="sidebar">
+                        <h3>CATEGORIAS</h3>
+                        <li>
+                            <div>
+                                <input type="radio" name="categorias-filtro" id="alldolls" class="eleccion"
+                                    value="alldolls" checked>
+                                <label for="alldolls" class="estilo_eleccion">Todos</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="categorias-filtro" id="monsterhigh" class="eleccion"
+                                    value="monsterhigh">
+                                <label for="monsterhigh" class="estilo_eleccion">Monster High</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="categorias-filtro" id="everafterhigh" class="eleccion"
+                                    value="everafterhigh">
+                                <label for="everafterhigh" class="estilo_eleccion">Ever After High</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="categorias-filtro" id="rainbowhigh" class="eleccion"
+                                    value="rainbowhigh">
+                                <label for="rainbowhigh" class="estilo_eleccion">Rainbow High</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="categorias-filtro" id="barbie" class="eleccion"
+                                    value="barbie">
+                                <label for="barbie" class="estilo_eleccion">Barbie</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="categorias-filtro" id="coleccionables" class="eleccion"
+                                    value="coleccionables">
+                                <label for="coleccionables" class="estilo_eleccion">Coleccionables</label>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="categorias_enlaces estilo_eleccion" href="#">
+                                <i class="fas fa-times-circle"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="header__marca">
+                    <!-- aqui ira el logo -->
+                    <a href="index.html"><img src="imagenes/logo.png" alt=logo class="header__marcaImg" /></a>
+                </div>
+                <div>
+                    <!-- aqui ira la barra de busqueda -->
+                </div>
+                <div class="seccion_compras">
+                    <!-- aqui iran los elementos del carrito y wishlist -->
+                    <div>
+                        <a class="" href="#carrito"><i class="fas fa-cart-plus iconos"></i></a>
+                        <ul class="carrito" id="carrito">
+                            <li>Yo soy el carrito</li>
+                            <li>
+                                <div id="objetos_carrito">
+
+                                </div>
+                            </li>
+                            <li>
+                                <p class="text-right">Total: <span id="total"></span></p>
+                            </li>
+                            <li>
+                                <a class="categorias_enlaces estilo_eleccion" href="#"><i
+                                        class="fas fa-times-circle"></i></a>
+                            </li>
+                    </div>
+                    <div>
+                        <a class="" href="#wishlist"><i class="fas fa-star iconos"></i></a>
+                        <ul class="carrito" id="wishlist">
+                            <li>Soy la lista de deseos</li>
+                            <li id="lista_deseos">
+
+                            </li>
+                            <li>
+                                <p class="text-right">Total: <span id="total"></span></p>
+                            </li>
+                            <li>
+                                <a class="categorias_enlaces estilo_eleccion" href="#"><i
+                                        class="fas fa-times-circle"></i></a></li>
+                            </li>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div>
+            <section class="main">
+                <div class="parrafo">
+                    <h1 class="titulo">¡Te damos la bienvenida a My FairyTale!</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo eius ipsum ipsam, modi quae
+                        consectetur veniam quam! Suscipit velit veritatis doloremque impedit facere assumenda repellat
+                        harum, et non adipisci officia?
+                    </p>
+                    <div>
+                        <button class="sistema"><i class="fas fa-hdd"></i></button>
+                    </div>
+                </div>
+                <div class="contenedor_img">
+                    <img id="fondoprincipal" class="img" src="imagenes/fondo1.png" />
+                </div>
+        </div>
+        </section>
+        <section>
+            <h2 class="titulo_dos">¡Mira nuestros productos!</h2>
+            <div id="contenedor" class="contenedor_cartas">
+
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <h5 class="footer_letra">©2022 by Laura Sofia Olaya Isaza</h5>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

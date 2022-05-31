@@ -1,0 +1,362 @@
+* {
+    margin: 0;
+    padding: 0; 
+}
+
+body {
+    color:rgb(101, 38, 55);
+    background: rgb(255,227,218);
+    background: linear-gradient(0deg, rgba(255,227,218,1) 0%, rgba(255,250,225,1) 100%);
+    background-image: url(../imagenes/fondo3.png);
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+main {
+    padding-top: 80px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul h3 {
+    font-weight: bold;
+    font-size: 30px;
+    text-align: justify;
+    color: rgb(101, 38, 55);
+    padding-bottom: 30px;
+}
+
+li a {
+    text-align: justify;
+    font-weight: bold;
+    font-size: 22px;
+    padding: 20px;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+
+header {
+    background-color: #ac7d88c7;
+    background: linear-gradient(to right, #ffb9ac, #b3487d);
+    background-size: cover;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.507);
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+.seccion_compras {
+    display: flex;
+}
+
+.header__contenedor {
+    max-width: 1150px;
+    margin: 0 auto;
+    margin-top: 0;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__marca {
+    height: 75px;
+}
+
+.header__marcaImg {
+    height: 100%;
+}
+
+.eleccion {
+    text-align: justify;
+}
+
+.estilo_eleccion {
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+.categorias {
+    display:flex;
+    background-color: rgb(255, 233, 233);
+    width: 80%;
+    max-width: 200px;
+    height: 50vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    transition: transform 0.5s;
+    z-index:100;
+    border-radius: 10px;
+    padding: 40px;
+}
+
+.carrito {
+    display:flex;
+    background-color: rgb(255, 233, 233);
+    width: 80%;
+    min-height: 400px;
+    max-width: 400px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    transition: transform 0.5s;
+    z-index:100;
+    border-radius: 10px;
+}
+
+#carrito:target {
+    transform: translateX(0);
+}
+
+#wishlist:target {
+    transform: translateX(0);
+}
+
+#sidebar:target {
+    transform: translateX(0);
+}
+
+.categorias--sidebar {
+    color: #5a3447;
+    font-weight: bold;
+    background-color: #ffe9e3;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    padding: 0.4rem 0.8rem;
+    display: inline-block;
+    border: 3px solid transparent;
+    transition: all 0.5s;
+}
+
+.categorias--sidebar:hover {
+    background-color: #ffe9e3;
+    color:rgb(192, 52, 159);
+    border: 3px solid rgb(255, 186, 74);
+}
+
+.categorias_enlaces {
+    text-decoration: none;
+    color: rgb(101, 38, 55);
+    transition: all 0.5s;
+}
+
+.categorias_enlaces:hover {
+    color:rgb(255, 72, 121)
+}
+
+.iconos {
+    font-size: 1.5rem;
+    padding: 20px;
+    color:antiquewhite;
+    transition: all 0.5s;
+}
+
+.iconos:hover {
+    color:white;
+    font-size: 1.7rem;
+}
+
+.main {
+    display:flex;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.titulo {
+    text-align: center;
+    align-items: center;
+    font-size: 3em;
+    line-height: 1.2em;
+    width: 100%;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    margin: 0 auto;
+}
+
+.parrafo {
+    text-align: justify;
+    margin: 50px;
+    width: 500px;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 25px;
+}
+
+.contenedor_img {
+    height: 500px;
+}
+
+.img {
+    height: 100%;
+    border-radius: 10px;
+}
+
+.titulo_dos {
+    text-align: center;
+    align-items: center;
+    font-size: 4em;
+    line-height: 1.2em;
+    width: 100%;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+    margin: 0 auto;
+}
+
+.titulo_tres {
+    font-size: 2em;
+    width: 50%;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+    margin: 0 auto;
+    margin-left: 20px;
+}
+
+.cajagrid {
+    display:grid;
+    grid-template-areas: 
+    "foto1 foto2"
+    "texto1 texto2";
+    grid-template-columns: repeat(2, 600px);
+    grid-template-rows: repeat(2, 280px);
+    margin: 0 auto; 
+}
+
+.cajaGrid__items {
+    justify-content: center;
+    align-items: center; 
+    margin: 0 auto;
+}
+
+.cajaGrid__img {
+    width: 60%;
+    border-radius: 10px; 
+    object-fit: cover;
+}
+
+.img_2 {
+    width: 40%;
+    border-radius: 10px; 
+    object-fit: cover;
+}
+
+.info {
+    text-align: center;
+    align-items: center;
+    line-height: 1.2em;
+}
+
+.info_2 {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    line-height: 1.2em;
+}
+
+.iconos_2 {
+    font-size: 1.5rem;
+    padding: 20px;
+    color:rgb(101, 38, 55);
+    transition: all 0.5s;
+}
+
+.contenedor_cartas {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.card {
+    width: 300px;
+    border-radius: 40px;
+    border:rgb(101, 38, 55) solid 2px;
+    background-color: rgba(255, 255, 255, 0.491);
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 10px;
+}
+
+.card_2 {
+    width: 300px;
+    padding: 10px;
+    border-radius: 40px;
+    border:rgb(95, 81, 84) solid 2px;
+    background-color: rgba(255, 255, 255, 0.491);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.botones {
+    background-color:rgba(255, 255, 255, 0);
+    border-radius: 20px;
+    border: transparent solid 1px;
+    margin: 10px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.botones--2 {
+    background-color:rgba(255, 255, 255, 0);
+    border-radius: 20px;
+    border: transparent solid 1px;
+    margin: 10px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.sistema {
+    font-size: 1.5rem;
+    background-color:rgb(255, 239, 236);
+    border-style:hidden;
+    color:#5a3447;
+    border-radius: 10px;
+    border: transparent solid 4px;
+    box-shadow: 0 2px 5px rgba(84, 28, 48, 0.589);
+    margin: 20px;
+    margin-left: 220px;
+    padding: 10px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.sistema:hover {
+    font-size: 1.5rem;
+    color:#fe5cad;
+    cursor: pointer;
+}
+
+.iconos_2:hover {
+    color:rgb(255, 106, 146)
+}
+
+.footer {
+    background-color: #ac7d88c7;
+    background: linear-gradient(to right, #ffb9ac, #b3487d);
+    width: 100%;
+    min-height: 40px;
+}
+
+.footer_letra {
+    font-size: 1rem;
+    text-align: center;
+    padding-top: 10px;
+    color:rgb(242, 226, 221);
+}
