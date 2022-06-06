@@ -335,6 +335,7 @@ const filtrar_muñecas = (array) => {
                 wishlist.push(productos[element.id - 1])
                 alert("Su producto se ha agregado a la wishlist con exito")
                 sessionStorage.setItem("wishlist", JSON.stringify(wishlist));
+                render_wishlist(productos[element.id - 1])
             })
             boton2.innerHTML = `<button id="btn${element.id_2}" class="btn_compra"><i class="fas fa-star iconos_2"></i></button>`
     
@@ -439,6 +440,7 @@ const filtrar_busqueda = () => {
                 wishlist.push(productos[element.id - 1])
                 alert("Su producto se ha agregado a la wishlist con exito")
                 sessionStorage.setItem("wishlist", JSON.stringify(wishlist));
+                render_wishlist(productos[element.id - 1])
             })
             boton2.innerHTML = `<button id="btn${element.id_2}" class="btn_compra"><i class="fas fa-star iconos_2"></i></button>`
     
