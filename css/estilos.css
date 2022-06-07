@@ -205,16 +205,6 @@ header {
     margin: 0 auto;
 }
 
-.cajagrid {
-    display:grid;
-    grid-template-areas: 
-    "foto1 foto2"
-    "texto1 texto2";
-    grid-template-columns: repeat(2, 600px);
-    grid-template-rows: repeat(2, 280px);
-    margin: 0 auto; 
-}
-
 .cajaGrid__items {
     justify-content: center;
     align-items: center; 
@@ -333,27 +323,6 @@ header {
 .btn_compra {
     background-color:rgba(255, 255, 255, 0);
     border: transparent solid 1px;
-}
-
-.sistema {
-    font-size: 1.5rem;
-    background-color:rgb(255, 239, 236);
-    border-style:hidden;
-    color:#5a3447;
-    border-radius: 10px;
-    border: transparent solid 4px;
-    box-shadow: 0 2px 5px rgba(84, 28, 48, 0.589);
-    margin: 20px;
-    margin-left: 220px;
-    padding: 10px;
-    transition: all 0.5s;
-    cursor: pointer;
-}
-
-.sistema:hover {
-    font-size: 1.5rem;
-    color:#fe5cad;
-    cursor: pointer;
 }
 
 .iconos_2:hover {
