@@ -102,205 +102,70 @@ const productos = [{
 
 const carrito_compras = [];
 const wishlist = [];
-
-const eliminar_producto = () => {
-    carrito_compras.splice(seleccion - 1, 1);
-    alert("El producto se elimino de tu carrito con exito");
-    console.log(carrito_compras);
-};
-
 const divWISHLIST = document.getElementById("objetos_wishlist");
 const divCARRITO = document.getElementById("objetos_carrito");
 
-const render_carrito = (array) => {
-    divCARRITO.innerHTML = " ";
-    let index = 0
+const render_carrito = (array, div) => {
+    div.innerHTML = " ";
+    let index = 0;
     for (let element of array) {
-    
-    let carta = document.createElement("div");
-    carta.className = "card_2";
+        let carta = document.createElement("div");
+        carta.className = "card_2";
 
-    const contenedor = document.createElement("div");
-    contenedor.classList.add("info_2");
+        const contenedor = document.createElement("div");
+        contenedor.classList.add("info_2");
 
-    const img = document.createElement("img");
-    img.classList.add("img_2");
-    img.setAttribute("src", element.img);
+        const img = document.createElement("img");
+        img.classList.add("img_2");
+        img.setAttribute("src", element.img);
 
-    const body = document.createElement("div");
-    body.classList.add("items");
+        const body = document.createElement("div");
+        body.classList.add("items");
 
-    const titulo = document.createElement("h4");
-    titulo.textContent = `${index} ${element.nombre}`;
+        const titulo = document.createElement("h4");
+        titulo.textContent = `${index} ${element.nombre}`;
 
-    const precio = document.createElement("h4");
-    precio.textContent = `${element.precio} $`;
+        const precio = document.createElement("h4");
+        precio.textContent = `${element.precio} $`;
 
-    const boton1 = document.createElement("button");
-    boton1.classList.add("botones_2");
-    boton1.addEventListener("click", () => {
-        carrito_compras.splice(index, 1);
-        render_carrito(array)
-    });
-    boton1.innerHTML = `<button id="btn${element.id}"><i class="fas fa-times-circle"></i></button>`;
+        const boton1 = document.createElement("button");
+        boton1.classList.add("botones_2");
+        boton1.addEventListener("click", () => {
+            array.splice(index - 1, 1);
+            render_carrito(array, div);
+            total_p(total);
+        });
+        boton1.innerHTML = `<button id="btn${element.id}"><i class="fas fa-times-circle"></i></button>`;
 
-    body.appendChild(titulo);
-    body.appendChild(precio);
+        body.appendChild(titulo);
+        body.appendChild(precio);
 
-    contenedor.appendChild(img);
-    contenedor.appendChild(body);
-    contenedor.appendChild(boton1);
+        contenedor.appendChild(img);
+        contenedor.appendChild(body);
+        contenedor.appendChild(boton1);
 
-    carta.appendChild(contenedor);
-    console.log(carta);
-    divCARRITO.appendChild(carta);
-    index++
-}
+        carta.appendChild(contenedor);
+        console.log(carta);
+        div.appendChild(carta);
+        index++;
+    }
 };
 
-const render_wishlist = (element) => {
-    let carta = document.createElement("div");
-    carta.className = "card_2";
-
-    const contenedor = document.createElement("div");
-    contenedor.classList.add("info_2");
-
-    const img = document.createElement("img");
-    img.classList.add("img_2");
-    img.setAttribute("src", element.img);
-
-    const body = document.createElement("div");
-    body.classList.add("items");
-
-    const titulo = document.createElement("h4");
-    titulo.textContent = element.nombre;
-
-    const precio = document.createElement("h4");
-    precio.textContent = `${element.precio} $`;
-
-    const boton1 = document.createElement("button");
-    boton1.classList.add("botones_2");
-    boton1.addEventListener("click", () => {});
-    boton1.innerHTML = `<button id="btn${element.id}"><i class="fas fa-times-circle"></i></button>`;
-
-    body.appendChild(titulo);
-    body.appendChild(precio);
-
-    contenedor.appendChild(img);
-    contenedor.appendChild(body);
-    contenedor.appendChild(boton1);
-
-    carta.appendChild(contenedor);
-    console.log(carta);
-    divWISHLIST.appendChild(carta);
-};
 let total = document.getElementById("total_pagar");
 
-const total_p = () => {
-    total.innerHTML = " ";
+
+const total_p = (a) => {
+    a.innerHTML = " ";
     let precio = carrito_compras.map((num) => num.precio);
     const total_2 = precio.reduce((a, b) => a + b, 0);
     let text = document.createElement("h6");
     text.textContent = ` Total: ${total_2} USD`;
-    total.appendChild(text);
+    a.appendChild(text);
 };
 
 const divID = document.getElementById("contenedor");
 
 const renderProductos = (array) => {
-    for (let element of array) {
-        let carta = document.createElement("div");
-        carta.className = "card";
-
-        const body = document.createElement("div");
-        body.classList.add("items");
-
-        const contenedor = document.createElement("div");
-        contenedor.classList.add("info");
-
-        const img = document.createElement("img");
-        img.classList.add("cajaGrid__img");
-        img.setAttribute("src", element.img);
-
-        const titulo = document.createElement("h4");
-        titulo.textContent = element.nombre;
-
-        const precio = document.createElement("h4");
-        precio.textContent = `${element.precio} $`;
-
-        const descripcion = document.createElement("p");
-        descripcion.textContent = element.descripcion;
-
-        const boton1 = document.createElement("button");
-        boton1.classList.add("botones");
-        boton1.addEventListener("click", () => {
-            carrito_compras.push(productos[element.id - 1]);
-            alert("Su producto se ha agregado al carrito con exito");
-            sessionStorage.removeItem("carrito");
-            sessionStorage.setItem("carrito", JSON.stringify(carrito_compras));
-            render_carrito(carrito_compras);
-            total_p();
-        });
-        boton1.innerHTML = `<button id="btn${element.id}" class="btn_compra"><i class="fas fa-cart-plus iconos_2"></i></button>`;
-
-        const boton2 = document.createElement("button");
-        boton2.classList.add("botones--2");
-        boton2.addEventListener("click", () => {
-            wishlist.push(productos[element.id - 1]);
-            alert("Su producto se ha agregado a la wishlist con exito");
-            sessionStorage.setItem("wishlist", JSON.stringify(wishlist));
-            render_wishlist(productos[element.id - 1]);
-        });
-        boton2.innerHTML = `<button id="btn${element.id_2}" class="btn_compra"><i class="fas fa-star iconos_2"></i></button>`;
-
-        contenedor.appendChild(img);
-        contenedor.appendChild(titulo);
-        contenedor.appendChild(precio);
-        contenedor.appendChild(descripcion);
-        contenedor.appendChild(boton1);
-        contenedor.appendChild(boton2);
-
-        carta.appendChild(body);
-        carta.appendChild(contenedor);
-        divID.appendChild(carta);
-    }
-};
-
-const filtrado_MH = productos.filter(
-    (categorias) => categorias.saga == "Monster High"
-);
-const filtrado_EAH = productos.filter(
-    (categorias) => categorias.saga == "Ever After High"
-);
-const filtrado_RH = productos.filter(
-    (categorias) => categorias.saga == "Rainbow High"
-);
-const filtrado_Barbie = productos.filter(
-    (categorias) => categorias.saga == "Barbie"
-);
-const filrado_coleccion = productos.filter(
-    (categorias) => categorias.saga == "Coleccionables"
-);
-
-const mostrar_productos = renderProductos(productos);
-
-let radioAllDolls = document.getElementById("alldolls");
-
-let radioMH = document.getElementById("monsterhigh");
-
-let radioEAH = document.getElementById("everafterhigh");
-
-let radioRH = document.getElementById("rainbowhigh");
-
-let radioBarbie = document.getElementById("barbie");
-
-let radioColeccion = document.getElementById("coleccionables");
-
-function cambiarimg(source) {
-    document.getElementById("fondoprincipal").src = source;
-}
-
-const filtrar_muñecas = (array) => {
     divID.innerHTML = " ";
     for (let element of array) {
         let carta = document.createElement("div");
@@ -332,8 +197,8 @@ const filtrar_muñecas = (array) => {
             alert("Su producto se ha agregado al carrito con exito");
             sessionStorage.removeItem("carrito");
             sessionStorage.setItem("carrito", JSON.stringify(carrito_compras));
-            render_carrito(productos[element.id - 1]);
-            total_p();
+            render_carrito(carrito_compras, divCARRITO);
+            total_p(total);
         });
         boton1.innerHTML = `<button id="btn${element.id}" class="btn_compra"><i class="fas fa-cart-plus iconos_2"></i></button>`;
 
@@ -342,8 +207,9 @@ const filtrar_muñecas = (array) => {
         boton2.addEventListener("click", () => {
             wishlist.push(productos[element.id - 1]);
             alert("Su producto se ha agregado a la wishlist con exito");
+            sessionStorage.removeItem("wishlist");
             sessionStorage.setItem("wishlist", JSON.stringify(wishlist));
-            render_wishlist(productos[element.id - 1]);
+            render_carrito(wishlist, divWISHLIST);
         });
         boton2.innerHTML = `<button id="btn${element.id_2}" class="btn_compra"><i class="fas fa-star iconos_2"></i></button>`;
 
@@ -356,44 +222,78 @@ const filtrar_muñecas = (array) => {
 
         carta.appendChild(body);
         carta.appendChild(contenedor);
-        console.log(carta);
         divID.appendChild(carta);
     }
 };
+
+const filtrado_MH = productos.filter(
+    (categorias) => categorias.saga == "Monster High"
+);
+const filtrado_EAH = productos.filter(
+    (categorias) => categorias.saga == "Ever After High"
+);
+const filtrado_RH = productos.filter(
+    (categorias) => categorias.saga == "Rainbow High"
+);
+const filtrado_Barbie = productos.filter(
+    (categorias) => categorias.saga == "Barbie"
+);
+const filtrado_coleccion = productos.filter(
+    (categorias) => categorias.saga == "Coleccionables"
+);
+
+const mostrar_productos = renderProductos(productos);
+
+let radioAllDolls = document.getElementById("alldolls");
+
+let radioMH = document.getElementById("monsterhigh");
+
+let radioEAH = document.getElementById("everafterhigh");
+
+let radioRH = document.getElementById("rainbowhigh");
+
+let radioBarbie = document.getElementById("barbie");
+
+let radioColeccion = document.getElementById("coleccionables");
+
+function cambiarimg(source) {
+    document.getElementById("fondoprincipal").src = source;
+}
+
 radioMH.addEventListener("click", () => {
     alert("Elegiste ver las muñecas Monster High");
     cambiarimg("./imagenes/fondo1_versionMH.png");
-    filtrar_muñecas(filtrado_MH);
+    renderProductos(filtrado_MH)
 });
 
 radioEAH.addEventListener("click", () => {
     alert("Elegiste ver las muñecas Ever After High");
     cambiarimg("./imagenes/fondo1_versionEAH.png");
-    filtrar_muñecas(filtrado_EAH);
+    renderProductos(filtrado_EAH)
 });
 
 radioRH.addEventListener("click", () => {
     alert("Elegiste ver las muñecas Rainbow High");
     cambiarimg("./imagenes/fondo1_versionRH.png");
-    filtrar_muñecas(filtrado_RH);
+    renderProductos(filtrado_RH)
 });
 
 radioBarbie.addEventListener("click", () => {
     alert("Elegiste ver las mueñca Barbie");
     cambiarimg("./imagenes/fondo1_versionB.png");
-    filtrar_muñecas(filtrado_Barbie);
+    renderProductos(filtrado_Barbie)
 });
 
 radioColeccion.addEventListener("click", () => {
     alert("Elegiste ver las muñecas Coleccionables");
     cambiarimg("./imagenes/fondo1_versioncollector.png");
-    filtrar_muñecas(filrado_coleccion);
+    renderProductos(filtrado_coleccion)
 });
 
 radioAllDolls.addEventListener("click", () => {
     alert("Elegiste ver todas las muñecas.");
     cambiarimg("./imagenes/fondo1.png");
-    filtrar_muñecas(productos);
+    renderProductos(productos)
 });
 
 const busqueda = document.querySelector("#buscador");
@@ -432,11 +332,11 @@ const filtrar_busqueda = () => {
             boton1.classList.add("botones");
             boton1.addEventListener("click", () => {
                 carrito_compras.push(productos[element.id - 1]);
-                alert("Su producto se ha agregado al carrito con exito");
-                sessionStorage.removeItem("carrito");
-                sessionStorage.setItem("carrito", JSON.stringify(carrito_compras));
-                render_carrito(productos[element.id - 1]);
-                total_p();
+            alert("Su producto se ha agregado al carrito con exito");
+            sessionStorage.removeItem("carrito");
+            sessionStorage.setItem("carrito", JSON.stringify(carrito_compras));
+            render_carrito(carrito_compras, divCARRITO);
+            total_p(total);
             });
             boton1.innerHTML = `<button id="btn${element.id}" class="btn_compra"><i class="fas fa-cart-plus iconos_2"></i></button>`;
 
@@ -444,9 +344,10 @@ const filtrar_busqueda = () => {
             boton2.classList.add("botones--2");
             boton2.addEventListener("click", () => {
                 wishlist.push(productos[element.id - 1]);
-                alert("Su producto se ha agregado a la wishlist con exito");
-                sessionStorage.setItem("wishlist", JSON.stringify(wishlist));
-                render_wishlist(productos[element.id - 1]);
+            alert("Su producto se ha agregado a la wishlist con exito");
+            sessionStorage.removeItem("wishlist");
+            sessionStorage.setItem("wishlist", JSON.stringify(wishlist));
+            render_carrito(wishlist, divWISHLIST);
             });
             boton2.innerHTML = `<button id="btn${element.id_2}" class="btn_compra"><i class="fas fa-star iconos_2"></i></button>`;
 
@@ -470,3 +371,90 @@ const filtrar_busqueda = () => {
 };
 
 btn_busqueda.addEventListener("click", filtrar_busqueda);
+
+const btn_borrar_carrito = document.querySelector("#borrar_todo");
+
+btn_borrar_carrito.addEventListener("click", () => {
+    alert("El carrito se elimino con exito");
+    for (let i = carrito_compras.length; i > 0; i--) {
+        carrito_compras.pop();
+    }
+    sessionStorage.removeItem("carrito");
+    render_carrito(carrito_compras, divCARRITO);
+    total_p(total);
+});
+
+const btn_fin_compra = document.querySelector("#btn_fin_compra");
+const divFINCOMPRA = document.getElementById("finalizar_compra");
+
+const renderCompra = () => {
+    const carrito_storage = JSON.parse(sessionStorage.getItem("carrito"));
+    divFINCOMPRA.innerHTML = `
+    <h2 class="titulo_dos">¡Finalizá tu compra!</h2>
+    <form action="" method="" enctype="">
+    <div class="formulario">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" class="" required="text" name="nombre"placeholder="Tu nombre">
+    </div>
+
+    <div class="formulario">
+        <label for="apellido">Apellido</label>
+        <input type="text" id="apellido" class="" required="text" name="apellido" placeholder="Tu apellido">
+    </div>
+
+    <div class="formulario">
+        <label for="email">Tu Email</label>
+        <input type="email" id="email" class="" equired="email" placeholder="Tu Email">
+    </div>
+
+    <div class="formulario">
+        <label for="telefono">Telefono</label>
+        <input type="tel" id="telefono" class="" equired="telefono" placeholder="Tu telefono">
+    </div>
+
+    <div class="formulario">
+        <label for="direccion">Direccion</label>
+        <input type="text" id="direccion" class="" required="text" name="direccion" placeholder="Tu direccion">
+    </div>
+
+    <div>
+        <input class="boton" type="submit" value="Finalizar Compra">
+    </div>
+    </form>`
+    for (let element of carrito_storage) {
+        let carta = document.createElement("div");
+        carta.className = "card";
+
+        const body = document.createElement("div");
+        body.classList.add("items");
+
+        const contenedor = document.createElement("div");
+        contenedor.classList.add("info");
+
+        const img = document.createElement("img");
+        img.classList.add("cajaGrid__img");
+        img.setAttribute("src", element.img);
+
+        const titulo = document.createElement("h4");
+        titulo.textContent = element.nombre;
+
+        const precio = document.createElement("h4");
+        precio.textContent = `${element.precio} $`;
+
+        contenedor.appendChild(img);
+        contenedor.appendChild(titulo);
+        contenedor.appendChild(precio);
+
+        carta.appendChild(body);
+        carta.appendChild(contenedor);
+        divFINCOMPRA.appendChild(carta);
+    }
+    
+}
+
+let total_2 = document.getElementById("total_real")
+
+btn_fin_compra.addEventListener("click", () => {
+    renderCompra()
+    total_p(total_2)
+})
