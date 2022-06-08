@@ -100,10 +100,14 @@ const productos = [{
     },
 ];
 
+//variables necesarias
+
 const carrito_compras = [];
 const wishlist = [];
 const divWISHLIST = document.getElementById("objetos_wishlist");
 const divCARRITO = document.getElementById("objetos_carrito");
+
+// Carrito de forma fisica 
 
 const render_carrito = (array, div) => {
     div.innerHTML = " ";
@@ -151,8 +155,9 @@ const render_carrito = (array, div) => {
     }
 };
 
-let total = document.getElementById("total_pagar");
+// SubTotal de la compra
 
+let total = document.getElementById("total_pagar");
 
 const total_p = (a) => {
     a.innerHTML = " ";
@@ -162,6 +167,8 @@ const total_p = (a) => {
     text.textContent = ` Total: ${total_2} USD`;
     a.appendChild(text);
 };
+
+// Creacion de los productos
 
 const divID = document.getElementById("contenedor");
 
@@ -225,6 +232,9 @@ const renderProductos = (array) => {
         divID.appendChild(carta);
     }
 };
+const mostrar_productos = renderProductos(productos);
+
+// filtros para los botones radio
 
 const filtrado_MH = productos.filter(
     (categorias) => categorias.saga == "Monster High"
@@ -241,8 +251,6 @@ const filtrado_Barbie = productos.filter(
 const filtrado_coleccion = productos.filter(
     (categorias) => categorias.saga == "Coleccionables"
 );
-
-const mostrar_productos = renderProductos(productos);
 
 let radioAllDolls = document.getElementById("alldolls");
 
@@ -295,6 +303,8 @@ radioAllDolls.addEventListener("click", () => {
     cambiarimg("./imagenes/fondo1.png");
     renderProductos(productos)
 });
+
+// barra de busqueda
 
 const busqueda = document.querySelector("#buscador");
 const btn_busqueda = document.querySelector("#boton_buscar");
@@ -372,6 +382,8 @@ const filtrar_busqueda = () => {
 
 btn_busqueda.addEventListener("click", filtrar_busqueda);
 
+// boton para borrar todo el carrito
+
 const btn_borrar_carrito = document.querySelector("#borrar_todo");
 
 btn_borrar_carrito.addEventListener("click", () => {
@@ -383,6 +395,8 @@ btn_borrar_carrito.addEventListener("click", () => {
     render_carrito(carrito_compras, divCARRITO);
     total_p(total);
 });
+
+// finalizacion de compra
 
 const btn_fin_compra = document.querySelector("#btn_fin_compra");
 const divFINCOMPRA = document.getElementById("finalizar_compra");
