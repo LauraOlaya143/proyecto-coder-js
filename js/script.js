@@ -107,11 +107,11 @@ const wishlist = [];
 const divWISHLIST = document.getElementById("objetos_wishlist");
 const divCARRITO = document.getElementById("objetos_carrito");
 
-// Carrito de forma fisica 
+// Carrito de forma fisica
 
-const render_carrito = (array, div) => {
+const render_carrito = (array, div, nombre_storage) => {
     div.innerHTML = " ";
-    let index = 0;
+    let index = 1;
     for (let element of array) {
         let carta = document.createElement("div");
         carta.className = "card_2";
@@ -135,7 +135,10 @@ const render_carrito = (array, div) => {
         const boton1 = document.createElement("button");
         boton1.classList.add("botones_2");
         boton1.addEventListener("click", () => {
-            array.splice(index - 1, 1);
+            let indice = array.indexOf(element)
+            array.splice(indice, 1);
+            sessionStorage.removeItem(nombre_storage);
+            sessionStorage.setItem(nombre_storage, JSON.stringify(array));
             render_carrito(array, div);
             total_p(total);
         });
@@ -204,7 +207,7 @@ const renderProductos = (array) => {
             alert("Su producto se ha agregado al carrito con exito");
             sessionStorage.removeItem("carrito");
             sessionStorage.setItem("carrito", JSON.stringify(carrito_compras));
-            render_carrito(carrito_compras, divCARRITO);
+            render_carrito(carrito_compras, divCARRITO,"carrito");
             total_p(total);
         });
         boton1.innerHTML = `<button id="btn${element.id}" class="btn_compra"><i class="fas fa-cart-plus iconos_2"></i></button>`;
@@ -216,7 +219,7 @@ const renderProductos = (array) => {
             alert("Su producto se ha agregado a la wishlist con exito");
             sessionStorage.removeItem("wishlist");
             sessionStorage.setItem("wishlist", JSON.stringify(wishlist));
-            render_carrito(wishlist, divWISHLIST);
+            render_carrito(wishlist, divWISHLIST, "wishlist");
         });
         boton2.innerHTML = `<button id="btn${element.id_2}" class="btn_compra"><i class="fas fa-star iconos_2"></i></button>`;
 
@@ -269,39 +272,33 @@ function cambiarimg(source) {
 }
 
 radioMH.addEventListener("click", () => {
-    alert("Elegiste ver las muñecas Monster High");
     cambiarimg("./imagenes/fondo1_versionMH.png");
-    renderProductos(filtrado_MH)
+    renderProductos(filtrado_MH);
 });
 
 radioEAH.addEventListener("click", () => {
-    alert("Elegiste ver las muñecas Ever After High");
     cambiarimg("./imagenes/fondo1_versionEAH.png");
-    renderProductos(filtrado_EAH)
+    renderProductos(filtrado_EAH);
 });
 
 radioRH.addEventListener("click", () => {
-    alert("Elegiste ver las muñecas Rainbow High");
     cambiarimg("./imagenes/fondo1_versionRH.png");
-    renderProductos(filtrado_RH)
+    renderProductos(filtrado_RH);
 });
 
 radioBarbie.addEventListener("click", () => {
-    alert("Elegiste ver las mueñca Barbie");
     cambiarimg("./imagenes/fondo1_versionB.png");
-    renderProductos(filtrado_Barbie)
+    renderProductos(filtrado_Barbie);
 });
 
 radioColeccion.addEventListener("click", () => {
-    alert("Elegiste ver las muñecas Coleccionables");
     cambiarimg("./imagenes/fondo1_versioncollector.png");
-    renderProductos(filtrado_coleccion)
+    renderProductos(filtrado_coleccion);
 });
 
 radioAllDolls.addEventListener("click", () => {
-    alert("Elegiste ver todas las muñecas.");
     cambiarimg("./imagenes/fondo1.png");
-    renderProductos(productos)
+    renderProductos(productos);
 });
 
 // barra de busqueda
@@ -342,11 +339,11 @@ const filtrar_busqueda = () => {
             boton1.classList.add("botones");
             boton1.addEventListener("click", () => {
                 carrito_compras.push(productos[element.id - 1]);
-            alert("Su producto se ha agregado al carrito con exito");
-            sessionStorage.removeItem("carrito");
-            sessionStorage.setItem("carrito", JSON.stringify(carrito_compras));
-            render_carrito(carrito_compras, divCARRITO);
-            total_p(total);
+                alert("Su producto se ha agregado al carrito con exito");
+                sessionStorage.removeItem("carrito");
+                sessionStorage.setItem("carrito", JSON.stringify(carrito_compras));
+                render_carrito(carrito_compras, divCARRITO);
+                total_p(total);
             });
             boton1.innerHTML = `<button id="btn${element.id}" class="btn_compra"><i class="fas fa-cart-plus iconos_2"></i></button>`;
 
@@ -354,10 +351,10 @@ const filtrar_busqueda = () => {
             boton2.classList.add("botones--2");
             boton2.addEventListener("click", () => {
                 wishlist.push(productos[element.id - 1]);
-            alert("Su producto se ha agregado a la wishlist con exito");
-            sessionStorage.removeItem("wishlist");
-            sessionStorage.setItem("wishlist", JSON.stringify(wishlist));
-            render_carrito(wishlist, divWISHLIST);
+                alert("Su producto se ha agregado a la wishlist con exito");
+                sessionStorage.removeItem("wishlist");
+                sessionStorage.setItem("wishlist", JSON.stringify(wishlist));
+                render_carrito(wishlist, divWISHLIST);
             });
             boton2.innerHTML = `<button id="btn${element.id_2}" class="btn_compra"><i class="fas fa-star iconos_2"></i></button>`;
 
@@ -374,10 +371,7 @@ const filtrar_busqueda = () => {
             divID.appendChild(carta);
         }
     }
-    if (divID.innerHTML === " ") {
-        divID.innerHTML += `
-        <h6>No se ha encontrado ningun producto :c </h6>`;
-    }
+    divID.innerHTML === " " && alert("No se ha encontrado ningun producto :c")
 };
 
 btn_busqueda.addEventListener("click", filtrar_busqueda);
@@ -385,6 +379,7 @@ btn_busqueda.addEventListener("click", filtrar_busqueda);
 // boton para borrar todo el carrito
 
 const btn_borrar_carrito = document.querySelector("#borrar_todo");
+const btn_borrar_wishlist = document.querySelector("#borrar_todo_wishlist");
 
 btn_borrar_carrito.addEventListener("click", () => {
     alert("El carrito se elimino con exito");
@@ -396,15 +391,26 @@ btn_borrar_carrito.addEventListener("click", () => {
     total_p(total);
 });
 
+btn_borrar_wishlist.addEventListener("click", () => {
+    alert("La wishlist se elimino con exito");
+    for (let i = wishlist.length; i > 0; i--) {
+        wishlist.pop();
+    }
+    sessionStorage.removeItem("wishlist");
+    render_carrito(wishlist, divWISHLIST);
+});
+
 // finalizacion de compra
 
 const btn_fin_compra = document.querySelector("#btn_fin_compra");
 const divFINCOMPRA = document.getElementById("finalizar_compra");
+const divFORMULARIO = document.getElementById("formulario");
 
-const renderCompra = () => {
-    const carrito_storage = JSON.parse(sessionStorage.getItem("carrito"));
-    divFINCOMPRA.innerHTML = `
+const renderFormulario = () => {
+    divFORMULARIO.innerHTML = ` `
+        divFORMULARIO.innerHTML = `
     <h2 class="titulo_dos">¡Finalizá tu compra!</h2>
+    <div class="formulario">
     <form action="" method="" enctype="">
     <div class="formulario">
         <label for="nombre">Nombre</label>
@@ -430,45 +436,58 @@ const renderCompra = () => {
         <label for="direccion">Direccion</label>
         <input type="text" id="direccion" class="" required="text" name="direccion" placeholder="Tu direccion">
     </div>
+    
+    <div id="total_real">
+
+    </div>
 
     <div>
-        <input class="boton" type="submit" value="Finalizar Compra">
+        <input id="btn_formulario"class="boton" type="submit" value="Finalizar Compra">
     </div>
-    </form>`
+    </form>
+    </div>`;
+    
+};
+
+
+const renderCompra = () => {
+    divFINCOMPRA.innerHTML = ` `
+    const carrito_storage = JSON.parse(sessionStorage.getItem("carrito"));
+    divFINCOMPRA.innerHTML = `<h6 class="titulo_dos">Tu Compra:</h6>`
     for (let element of carrito_storage) {
         let carta = document.createElement("div");
-        carta.className = "card";
-
-        const body = document.createElement("div");
-        body.classList.add("items");
-
-        const contenedor = document.createElement("div");
-        contenedor.classList.add("info");
-
-        const img = document.createElement("img");
-        img.classList.add("cajaGrid__img");
-        img.setAttribute("src", element.img);
-
-        const titulo = document.createElement("h4");
-        titulo.textContent = element.nombre;
-
-        const precio = document.createElement("h4");
-        precio.textContent = `${element.precio} $`;
-
-        contenedor.appendChild(img);
-        contenedor.appendChild(titulo);
-        contenedor.appendChild(precio);
-
-        carta.appendChild(body);
-        carta.appendChild(contenedor);
+        carta.innerHTML = `
+        <div class="card mb-3 card_3" style="max-width: 540px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="${element.img}" class="img-fluid rounded-start" alt="imgCompra">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">${element.nombre}</h5>
+                    <p class="card-text">${element.precio} USD</p>
+                </div>
+            </div>
+        </div>
+        </div>`
         divFINCOMPRA.appendChild(carta);
     }
-    
 }
 
-let total_2 = document.getElementById("total_real")
-
 btn_fin_compra.addEventListener("click", () => {
-    renderCompra()
-    total_p(total_2)
-})
+    const carrito_storage = JSON.parse(sessionStorage.getItem("carrito"));
+    if(carrito_storage.length > 0) {
+    divFORMULARIO.innerHTML = `<h2 class="titulo_dos">¡Finalizá tu compra!</h2>`
+    renderFormulario()
+    renderCompra();
+    let total_2 = document.getElementById("total_real");
+    total_p(total_2);
+    const btn_formulario = document.getElementById("btn_formulario");
+    btn_formulario.addEventListener("click", () => {
+        alert("gracias por su compra crack, vuelva pronto")
+        sessionStorage.removeItem("carrito");
+        location.reload()
+    })
+    } 
+    
+});

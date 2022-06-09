@@ -252,6 +252,11 @@ header {
     padding: 10px;
 }
 
+.contenedor_compra {
+    margin: 50px;
+    padding: 5px;
+}
+
 .card {
     width: 300px;
     border-radius: 10px;
@@ -276,6 +281,15 @@ header {
     background-color: rgba(255, 255, 255, 0.491);
     margin: 0 auto;
     margin-bottom: 20px;
+}
+
+.card_3 {
+    width: 70%;
+}
+
+.formulario {
+    margin: 0 auto;
+    padding: 4px;
 }
 
 .botones {
