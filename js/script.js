@@ -1,51 +1,51 @@
 const productos = [{
         id: 1,
         id_2: 101,
-        nombre: "Draculaura Boo-riginal creeproductions",
+        nombre: "Draculaura - Boo-riginal creeproductions",
         saga: "Monster High",
-        categoria: "monsterhigh",
+        categoria: "monster high",
         img: "./imagenes/basic_draculaura_mh.jpg",
-        descripcion: "muñeca Monster High del 2022",
+        descripcion: "Muñeca Montser High del 2022, hija del conde Drácula.",
         precio: 25,
     },
     {
         id: 2,
         id_2: 102,
-        nombre: "Frankie Stein Boo-riginal creeproductions",
+        nombre: "Frankie Stein - Boo-riginal creeproductions",
         saga: "Monster High",
-        categoria: "monsterhigh",
+        categoria: "monster high",
         img: "./imagenes/basic_frankie_mh.jpg",
-        descripcion: "muñeca Monster High del 2022",
+        descripcion: "Muñeca Montser High del 2022, hija de Frankenstein.",
         precio: 25,
     },
     {
         id: 3,
         id_2: 103,
-        nombre: "Raven Queen First Chapter",
+        nombre: "Raven Queen - First Chapter",
         saga: "Ever After High",
-        categoria: "everafterhigh",
+        categoria: "ever after high",
         img: "./imagenes/basic_raven_queen_eah.jpg",
-        descripcion: "muñeca Ever After high del 2013",
+        descripcion: "Muñeca Ever After high del 2013, Hija de la reina malvada.",
         precio: 40,
     },
     {
         id: 4,
         id_2: 104,
-        nombre: "Apple White First Chapter",
+        nombre: "Apple White - First Chapter",
         saga: "Ever After High",
-        categoria: "everafterhigh",
+        categoria: "ever after high",
         img: "./imagenes/basic_apple_white_eah.jpeg",
-        descripcion: "muñeca Ever After High del 2013",
+        descripcion: "Muñeca Ever After High del 2013, Hija de Blancanieves.",
         precio: 40,
     },
     {
         id: 5,
         id_2: 105,
-        nombre: "Barbie Escuela de Princesas",
+        nombre: "Blair Willows - Princesa Sofia",
         saga: "Barbie",
         categoria: "barbie",
         img: "./imagenes/barbie_escuela_de_princesas_doll.jpg",
-        descripcion: "muñeca Barbie del 2011",
+        descripcion: "Muñeca Barbie del 2011 basada en la pelicula Barbie Escuela de Princesas.",
         precio: 15,
     },
     {
@@ -55,7 +55,7 @@ const productos = [{
         saga: "Barbie",
         categoria: "barbie",
         img: "./imagenes/barbie_mariposa_doll.jpg",
-        descripcion: "muñeca Barbie del 2013",
+        descripcion: "Muñeca Barbie del 2013 basada en el personaje Mariposa.",
         precio: 15,
     },
     {
@@ -63,9 +63,9 @@ const productos = [{
         id_2: 107,
         nombre: "Violet Willow - Purple Fashion - serie 1",
         saga: "Rainbow High",
-        categoria: "rainbowhigh",
+        categoria: "rainbow high",
         img: "./imagenes/violet_willow_rh.jpg",
-        descripcion: "muñeca Rainbow high del 2020",
+        descripcion: "Muñeca Rainbow high del 2020 de color morado.",
         precio: 35,
     },
     {
@@ -73,29 +73,139 @@ const productos = [{
         id_2: 108,
         nombre: "Bella Parker - Pink Fashion - serie 2",
         saga: "Rainbow High",
-        categoria: "rainbowhigh",
+        categoria: "rainbow high",
         img: "./imagenes/bella_parker_rh.jpg",
-        descripcion: "muñeca Rainbow High del 2020",
+        descripcion: "Muñeca Rainbow High del 2020 de color rosa.",
         precio: 35,
     },
     {
         id: 9,
         id_2: 109,
-        nombre: "Beetlejuice  & Lydia Deetz - Skullertor Doll 2-Pack",
+        nombre: "Beetlejuice  & Lydia Deetz - Monster High collector Doll 2-Pack",
         saga: "Coleccionables",
         categoria: "coleccionables",
         img: "./imagenes/beetlejuice_ skullector.jpg",
-        descripcion: "muñeca Monster High coleccionables basada en la pelicula Beetlejuice",
+        descripcion: "Muñeca Monster High coleccionables basada en la pelicula Beetlejuice.",
         precio: 90,
     },
     {
         id: 10,
         id_2: 1010,
-        nombre: "Lily Cheng - 2022 Año Nuevo del Tigre",
+        nombre: "Lily Cheng - Collector Rainbow High 2022",
         saga: "Coleccionables",
         categoria: "coleccionables",
         img: "./imagenes/lily_cheng_coleccionable.jpeg",
-        descripcion: "muñeca Rainbow High del nuevo año chino 2022",
+        descripcion: "Muñeca Rainbow High coleccionable por el nuevo año chino 2022.",
+        precio: 90,
+    },
+    {
+        id: 11,
+        id_2: 1011,
+        nombre: "Abbey Bominable - Modelo basico",
+        saga: "Monster High",
+        categoria: "monster high",
+        img: "./imagenes/abbey_bominable_mh.jpg",
+        descripcion: "Muñeca Monster high del 2011, Hija del yeti.",
+        precio: 25,
+    },
+    {
+        id: 12,
+        id_2: 1012,
+        nombre: "Cleo de Nile - Modelo basico",
+        saga: "Monster High",
+        categoria: "monster high",
+        img: "./imagenes/cleo_de_nile_mh.jpg",
+        descripcion: "Muñeca Monster high del 2010, Hija de la momia.",
+        precio: 25,
+    },
+    {
+        id: 13,
+        id_2: 1013,
+        nombre: "Rochelle Goyle - Modelo basico",
+        saga: "Monster High",
+        categoria: "monster high",
+        img: "./imagenes/rochelle_goyle_mh.jpg",
+        descripcion: "Muñeca Monster high del 2012, Hija de las gargolas de Scaris.",
+        precio: 25,
+    },
+    {
+        id: 14,
+        id_2: 1014,
+        nombre: "Lagoona Blue - Boo-riginal creeproductions",
+        saga: "Monster High",
+        categoria: "monster high",
+        img: "./imagenes/lagoona_blue_mh.jpg",
+        descripcion: "Muñeca Monster high del 2022, Hija del monstruo marino.",
+        precio: 25,
+    },
+    {
+        id: 15,
+        id_2: 1015,
+        nombre: "Briar Beauty - First Chapter",
+        saga: "Ever After High",
+        categoria: "ever after high",
+        img: "./imagenes/briar_beauty_eah.jpg",
+        descripcion: "Muñeca Ever After high del 2013, Hija de la Bella Durmiente.",
+        precio: 40,
+    },
+    {
+        id: 16,
+        id_2: 1016,
+        nombre: "Madeline Hatter - First Chapter",
+        saga: "Ever After High",
+        categoria: "ever after high",
+        img: "./imagenes/madeline_hatter_eah.jpg",
+        descripcion: "Muñeca Ever After high del 2013, Hija del Sombrerero Loco.",
+        precio: 40,
+    },
+    {
+        id: 17,
+        id_2: 1017,
+        nombre: "Blondie Lockers - First Chapter",
+        saga: "Ever After High",
+        categoria: "ever after high",
+        img: "./imagenes/blondie_lockers_eah.jpg",
+        descripcion: "Muñeca Ever After high del 2013, Hija de Risitos de Oro.",
+        precio: 40,
+    },
+    {
+        id: 18,
+        id_2: 1018,
+        nombre: "Lizzie Heart - First Chapter",
+        saga: "Ever After High",
+        categoria: "ever after high",
+        img: "./imagenes/lizzie_heart_eah.jpg",
+        descripcion: "Muñeca Ever After high del 2013, Hija de la Reina de Corazones de Alicia en el Pais de las Maravillas.",
+        precio: 40,
+    },
+    {
+        id: 19,
+        id_2: 1019,
+        nombre: "Keira - Barbie La Princesa y la Estrella de Pop",
+        saga: "Barbie",
+        categoria: "barbie",
+        img: "./imagenes/barbie_estrella_pop.jpg",
+        descripcion: "Muñeca Barbie del 2012 basada en el personaje de Keira, la estrella de pop.",
+        precio: 15,
+    },
+    {
+        id: 20,
+        id_2: 1020,
+        nombre: "Daphne Minton - Mint Fashion - serie 3",
+        saga: "Rainbow High",
+        categoria: "rainbow high",
+        img: "./imagenes/daphne_minton_rh_serie3.jpg",
+        descripcion: "Muñeca Rainbow High del 2020 de color menta.",
+        precio: 35,
+    },
+    {
+        id: 21,
+        id_2: 1021,
+        nombre: "Cerise Wolf - Ever After High Collector SDCC",
+        saga: "Coleccionables",
+        categoria: "coleccionables",
+        img: "./imagenes/collector_cerise_wolf.jpg",
+        descripcion: "Muñeca Ever After High basada en la hija del Gran Lobo Feroz.",
         precio: 90,
     },
 ];
@@ -127,7 +237,7 @@ const render_carrito = (array, div, nombre_storage) => {
         body.classList.add("items");
 
         const titulo = document.createElement("h4");
-        titulo.textContent = `${index} ${element.nombre}`;
+        titulo.textContent = `${index}. ${element.nombre}`;
 
         const precio = document.createElement("h4");
         precio.textContent = `${element.precio} $`;
@@ -141,6 +251,14 @@ const render_carrito = (array, div, nombre_storage) => {
             sessionStorage.setItem(nombre_storage, JSON.stringify(array));
             render_carrito(array, div);
             total_p(total);
+            Toastify({
+                text: "El producto se ha eliminado con exito",
+                duration: 3000,
+                close: true,
+                style: {
+                    background: "linear-gradient(to right, #eecda3, #ef629f)",
+                },
+                }).showToast();
         });
         boton1.innerHTML = `<button id="btn${element.id}"><i class="fas fa-times-circle"></i></button>`;
 
@@ -204,7 +322,14 @@ const renderProductos = (array) => {
         boton1.classList.add("botones");
         boton1.addEventListener("click", () => {
             carrito_compras.push(productos[element.id - 1]);
-            alert("Su producto se ha agregado al carrito con exito");
+            Toastify({
+                text: "Su producto se ha agregado al carrito con exito",
+                duration: 3000,
+                close: true,
+                style: {
+                    background: "linear-gradient(to right, #eecda3, #ef629f)",
+                },
+                }).showToast();
             sessionStorage.removeItem("carrito");
             sessionStorage.setItem("carrito", JSON.stringify(carrito_compras));
             render_carrito(carrito_compras, divCARRITO,"carrito");
@@ -216,7 +341,14 @@ const renderProductos = (array) => {
         boton2.classList.add("botones--2");
         boton2.addEventListener("click", () => {
             wishlist.push(productos[element.id - 1]);
-            alert("Su producto se ha agregado a la wishlist con exito");
+            Toastify({
+                text: "Su producto se ha agregado a la wishlist con exito",
+                duration: 3000,
+                close: true,
+                style: {
+                    background: "linear-gradient(to right, #eecda3, #ef629f)",
+                },
+                }).showToast();
             sessionStorage.removeItem("wishlist");
             sessionStorage.setItem("wishlist", JSON.stringify(wishlist));
             render_carrito(wishlist, divWISHLIST, "wishlist");
@@ -305,6 +437,16 @@ radioAllDolls.addEventListener("click", () => {
 
 const busqueda = document.querySelector("#buscador");
 const btn_busqueda = document.querySelector("#boton_buscar");
+const no_producto = () =>{
+    Toastify({
+        text: "No se ha encontrado ningun producto, porfavor intentelo de nuevo.",
+        duration: 3000,
+        close: true,
+        style: {
+            background: "linear-gradient(to right, #eecda3, #ef629f)",
+        },
+        }).showToast();
+} 
 
 const filtrar_busqueda = () => {
     divID.innerHTML = " ";
@@ -339,7 +481,14 @@ const filtrar_busqueda = () => {
             boton1.classList.add("botones");
             boton1.addEventListener("click", () => {
                 carrito_compras.push(productos[element.id - 1]);
-                alert("Su producto se ha agregado al carrito con exito");
+                Toastify({
+                    text: "Su producto se ha agregado al carrito con exito",
+                    duration: 3000,
+                    close: true,
+                    style: {
+                        background: "linear-gradient(to right, #eecda3, #ef629f)",
+                    },
+                    }).showToast();
                 sessionStorage.removeItem("carrito");
                 sessionStorage.setItem("carrito", JSON.stringify(carrito_compras));
                 render_carrito(carrito_compras, divCARRITO);
@@ -350,8 +499,15 @@ const filtrar_busqueda = () => {
             const boton2 = document.createElement("button");
             boton2.classList.add("botones--2");
             boton2.addEventListener("click", () => {
+                Toastify({
+                    text: "Su producto se ha agregado a la wishlist con exito",
+                    duration: 3000,
+                    close: true,
+                    style: {
+                        background: "linear-gradient(to right, #eecda3, #ef629f)",
+                    },
+                    }).showToast();
                 wishlist.push(productos[element.id - 1]);
-                alert("Su producto se ha agregado a la wishlist con exito");
                 sessionStorage.removeItem("wishlist");
                 sessionStorage.setItem("wishlist", JSON.stringify(wishlist));
                 render_carrito(wishlist, divWISHLIST);
@@ -371,8 +527,10 @@ const filtrar_busqueda = () => {
             divID.appendChild(carta);
         }
     }
-    divID.innerHTML === " " && alert("No se ha encontrado ningun producto :c")
+    divID.innerHTML === " " && no_producto()
 };
+
+
 
 btn_busqueda.addEventListener("click", filtrar_busqueda);
 
@@ -382,22 +540,60 @@ const btn_borrar_carrito = document.querySelector("#borrar_todo");
 const btn_borrar_wishlist = document.querySelector("#borrar_todo_wishlist");
 
 btn_borrar_carrito.addEventListener("click", () => {
-    alert("El carrito se elimino con exito");
-    for (let i = carrito_compras.length; i > 0; i--) {
+    if (carrito_compras.length > 0) {
+        Toastify({
+            text: "¡Tu carrito se elimino con exito!",
+            duration: 3000,
+            close: true,
+            style: {
+                background: "linear-gradient(to right, #eecda3, #ef629f)",
+            },
+            }).showToast();
+        for (let i = carrito_compras.length; i > 0; i--) {
         carrito_compras.pop();
     }
     sessionStorage.removeItem("carrito");
     render_carrito(carrito_compras, divCARRITO);
     total_p(total);
+    } else {
+        Toastify({
+            text: "Su carrito ya esta vacio",
+            duration: 3000,
+            close: true,
+            style: {
+                background: "linear-gradient(to right, #eecda3, #ef629f)",
+            },
+            }).showToast();
+    }
+    
 });
 
 btn_borrar_wishlist.addEventListener("click", () => {
-    alert("La wishlist se elimino con exito");
+    if (wishlist.length > 0) {
+        Toastify({
+            text: "¡Tu Wishlist se elimino con exito!",
+            duration: 3000,
+            close: true,
+            style: {
+                background: "linear-gradient(to right, #eecda3, #ef629f)",
+            },
+            }).showToast();
     for (let i = wishlist.length; i > 0; i--) {
         wishlist.pop();
     }
     sessionStorage.removeItem("wishlist");
     render_carrito(wishlist, divWISHLIST);
+    } else {
+        Toastify({
+            text: "Su Wishlist ya esta vacia",
+            duration: 3000,
+            close: true,
+            style: {
+                background: "linear-gradient(to right, #eecda3, #ef629f)",
+            },
+            }).showToast();
+    }
+    
 });
 
 // finalizacion de compra
@@ -442,7 +638,7 @@ const renderFormulario = () => {
     </div>
 
     <div>
-        <input id="btn_formulario"class="boton" type="submit" value="Finalizar Compra">
+        <input id="btn_formulario" class="boton" type="submit" value="Finalizar Compra">
     </div>
     </form>
     </div>`;
@@ -483,11 +679,15 @@ btn_fin_compra.addEventListener("click", () => {
     let total_2 = document.getElementById("total_real");
     total_p(total_2);
     const btn_formulario = document.getElementById("btn_formulario");
-    btn_formulario.addEventListener("click", () => {
-        alert("gracias por su compra crack, vuelva pronto")
+    /*btn_formulario.addEventListener("click", () => {
+        swal.fire({
+            title: "¡Gracias por su compra!",
+            icon: "success",
+            text: "Se ha finalizado su compra con exito",
+            confirmbuttontext: "Gracias"
+        })
         sessionStorage.removeItem("carrito");
-        location.reload()
-    })
+    })*/
     } 
     
 });

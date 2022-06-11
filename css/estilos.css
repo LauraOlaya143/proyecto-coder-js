@@ -3,6 +3,10 @@
     padding: 0; 
 }
 
+::selection {
+    background-color: #ff86a0;
+    color: #ffe7f2; }
+
 body {
     color:rgb(101, 38, 55);
     background: rgb(255,227,218);
@@ -10,6 +14,7 @@ body {
     background-image: url(../imagenes/fondo3.png);
     background-attachment: fixed;
     background-size: cover;
+    
 }
 
 main {
@@ -34,9 +39,26 @@ li a {
     font-size: 22px;
     padding: 20px;
     margin: 0 auto;
-    text-align: justify;
 }
 
+.enlace_compra {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: justify;
+    color: rgb(101, 38, 55);
+    border:#862451 2px solid;
+    background-color: rgb(255, 235, 235);
+    border-radius: 5px;
+    padding: 6px;
+    margin-left: 10px;
+    transition: all 0.5s;
+}
+
+.enlace_compra:hover {
+    color: #ff75ba;
+    border:#ff75ba 2px solid;
+}
 
 header {
     background-color: #ac7d88c7;
@@ -105,24 +127,6 @@ header {
 
 #sidebar:target {
     transform: translateX(0);
-}
-
-.categorias--sidebar {
-    background-color: rgb(255, 235, 235);
-    color: #862451;
-    font-weight: bold;
-    font-size: 1.5rem;
-    border-radius: 10px;
-    padding: 0.4rem 0.8rem;
-    display: inline-block;
-    border:#862451 2px solid;
-    transition: all 0.5s;
-}
-
-.categorias--sidebar:hover {
-    color: #ff75ba;
-    border:#ff75ba 2px solid;
-    background-color: rgb(255, 247, 251);
 }
 
 .categorias_enlaces {
@@ -285,11 +289,21 @@ header {
 
 .card_3 {
     width: 70%;
+    margin: 0 auto;
+    margin-left: 80px;
 }
 
 .formulario {
+    display: flex;
+    flex-direction: column;
     margin: 0 auto;
     padding: 4px;
+}
+
+.contenedor_cartas_2 {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
 }
 
 .botones {
@@ -393,6 +407,20 @@ header {
     border: 1px solid #6a484e;
 }
 
+.btn_bs_3 {
+    font-size: 22px;
+    background: #ffafbd;
+    background: linear-gradient(to right, #ffafbd, #ffceb1);
+    border: 2px solid #ffafbd;
+    border-radius: 5px;
+    margin-top: 50px;
+    transition: all 0.5s;
+}
+
+.btn_bs_3:hover{
+    border: 2px solid #ffbdc8
+}
+
 .footer {
     background-color: #ac7d88c7;
     background: linear-gradient(to right, #ffb9ac, #b3487d);
@@ -405,4 +433,104 @@ header {
     text-align: center;
     padding-top: 10px;
     color:rgb(242, 226, 221);
+}
+
+/* inicio de media querie para tableta */
+@media screen and (max-width: 1024px) {
+    .main {
+        flex-direction: column
+    }
+
+    .enlaces_contenedor {
+        display: flex;
+        flex-direction: column;
+        text-align:center;
+    }
+
+    .enlace_compra {
+        font-size: 13px;
+        text-align: center;
+        align-items: center;
+        padding: 3px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+    }
+
+    .card_3 {
+        width: 100%;
+        margin: 0 auto;
+        margin-left: 100px;
+    }
+
+    .input_busqueda {
+        width: 300px;
+        height: 30px;
+    }
+}
+
+/* inicio de media querie para mobile */
+@media screen and (max-width: 600px) {
+
+    .titulo {
+        text-align: center;
+        align-items: center;
+        font-size: 2em;
+        width: 100%;
+        padding-bottom: 2rem;
+        padding-top: 4rem;
+        margin: 0 auto;
+    }
+
+    .parrafo {
+        width: 300px;
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 25px;
+    }
+
+    .contenedor_img {
+        height: 300px;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+
+    .enlace_compra {
+        font-size: 10px;
+        text-align: center;
+        align-items: center;
+        padding: 6px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+    }
+    .card_3 {
+        width: 50%;
+        margin: 0 auto;
+        margin-left: 80px;
+    }
+
+    .input_busqueda {
+        width: 140px;
+        height: 30px;
+        margin-bottom: 10px;
+    }
+
+    .subtitulo {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .iconos {
+        font-size: 1rem;
+        padding: 10px;
+        color:rgb(255, 246, 235);
+        transition: all 0.5s;
+    }
+
+    .btn_bs_3 {
+        font-size: 18px;
+        margin-top: 120px;
+        transition: all 0.5s;
+    }
 }
