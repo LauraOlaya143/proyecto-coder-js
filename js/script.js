@@ -258,7 +258,7 @@ const render_carrito = (array, div, nombre_storage) => {
                 style: {
                     background: "linear-gradient(to right, #eecda3, #ef629f)",
                 },
-                }).showToast();
+            }).showToast();
         });
         boton1.innerHTML = `<button id="btn${element.id}"><i class="fas fa-times-circle"></i></button>`;
 
@@ -329,10 +329,10 @@ const renderProductos = (array) => {
                 style: {
                     background: "linear-gradient(to right, #eecda3, #ef629f)",
                 },
-                }).showToast();
+            }).showToast();
             sessionStorage.removeItem("carrito");
             sessionStorage.setItem("carrito", JSON.stringify(carrito_compras));
-            render_carrito(carrito_compras, divCARRITO,"carrito");
+            render_carrito(carrito_compras, divCARRITO, "carrito");
             total_p(total);
         });
         boton1.innerHTML = `<button id="btn${element.id}" class="btn_compra"><i class="fas fa-cart-plus iconos_2"></i></button>`;
@@ -348,7 +348,7 @@ const renderProductos = (array) => {
                 style: {
                     background: "linear-gradient(to right, #eecda3, #ef629f)",
                 },
-                }).showToast();
+            }).showToast();
             sessionStorage.removeItem("wishlist");
             sessionStorage.setItem("wishlist", JSON.stringify(wishlist));
             render_carrito(wishlist, divWISHLIST, "wishlist");
@@ -404,32 +404,32 @@ function cambiarimg(source) {
 }
 
 radioMH.addEventListener("click", () => {
-    cambiarimg("./imagenes/fondo1_versionMH.png");
+    cambiarimg("./imagenes/fondo2_versionMH.png");
     renderProductos(filtrado_MH);
 });
 
 radioEAH.addEventListener("click", () => {
-    cambiarimg("./imagenes/fondo1_versionEAH.png");
+    cambiarimg("./imagenes/fondo2_versionEAH.png");
     renderProductos(filtrado_EAH);
 });
 
 radioRH.addEventListener("click", () => {
-    cambiarimg("./imagenes/fondo1_versionRH.png");
+    cambiarimg("./imagenes/fondo2_versionRH.png");
     renderProductos(filtrado_RH);
 });
 
 radioBarbie.addEventListener("click", () => {
-    cambiarimg("./imagenes/fondo1_versionB.png");
+    cambiarimg("./imagenes/fondo2_versionB.png");
     renderProductos(filtrado_Barbie);
 });
 
 radioColeccion.addEventListener("click", () => {
-    cambiarimg("./imagenes/fondo1_versioncollector.png");
+    cambiarimg("./imagenes/fondo2_versioncollector.png");
     renderProductos(filtrado_coleccion);
 });
 
 radioAllDolls.addEventListener("click", () => {
-    cambiarimg("./imagenes/fondo1.png");
+    cambiarimg("./imagenes/fondo2.png");
     renderProductos(productos);
 });
 
@@ -437,7 +437,7 @@ radioAllDolls.addEventListener("click", () => {
 
 const busqueda = document.querySelector("#buscador");
 const btn_busqueda = document.querySelector("#boton_buscar");
-const no_producto = () =>{
+const no_producto = () => {
     Toastify({
         text: "No se ha encontrado ningun producto, porfavor intentelo de nuevo.",
         duration: 3000,
@@ -445,8 +445,8 @@ const no_producto = () =>{
         style: {
             background: "linear-gradient(to right, #eecda3, #ef629f)",
         },
-        }).showToast();
-} 
+    }).showToast();
+}
 
 const filtrar_busqueda = () => {
     divID.innerHTML = " ";
@@ -488,7 +488,7 @@ const filtrar_busqueda = () => {
                     style: {
                         background: "linear-gradient(to right, #eecda3, #ef629f)",
                     },
-                    }).showToast();
+                }).showToast();
                 sessionStorage.removeItem("carrito");
                 sessionStorage.setItem("carrito", JSON.stringify(carrito_compras));
                 render_carrito(carrito_compras, divCARRITO);
@@ -506,7 +506,7 @@ const filtrar_busqueda = () => {
                     style: {
                         background: "linear-gradient(to right, #eecda3, #ef629f)",
                     },
-                    }).showToast();
+                }).showToast();
                 wishlist.push(productos[element.id - 1]);
                 sessionStorage.removeItem("wishlist");
                 sessionStorage.setItem("wishlist", JSON.stringify(wishlist));
@@ -548,13 +548,13 @@ btn_borrar_carrito.addEventListener("click", () => {
             style: {
                 background: "linear-gradient(to right, #eecda3, #ef629f)",
             },
-            }).showToast();
+        }).showToast();
         for (let i = carrito_compras.length; i > 0; i--) {
-        carrito_compras.pop();
-    }
-    sessionStorage.removeItem("carrito");
-    render_carrito(carrito_compras, divCARRITO);
-    total_p(total);
+            carrito_compras.pop();
+        }
+        sessionStorage.removeItem("carrito");
+        render_carrito(carrito_compras, divCARRITO);
+        total_p(total);
     } else {
         Toastify({
             text: "Su carrito ya esta vacio",
@@ -563,9 +563,9 @@ btn_borrar_carrito.addEventListener("click", () => {
             style: {
                 background: "linear-gradient(to right, #eecda3, #ef629f)",
             },
-            }).showToast();
+        }).showToast();
     }
-    
+
 });
 
 btn_borrar_wishlist.addEventListener("click", () => {
@@ -577,12 +577,12 @@ btn_borrar_wishlist.addEventListener("click", () => {
             style: {
                 background: "linear-gradient(to right, #eecda3, #ef629f)",
             },
-            }).showToast();
-    for (let i = wishlist.length; i > 0; i--) {
-        wishlist.pop();
-    }
-    sessionStorage.removeItem("wishlist");
-    render_carrito(wishlist, divWISHLIST);
+        }).showToast();
+        for (let i = wishlist.length; i > 0; i--) {
+            wishlist.pop();
+        }
+        sessionStorage.removeItem("wishlist");
+        render_carrito(wishlist, divWISHLIST);
     } else {
         Toastify({
             text: "Su Wishlist ya esta vacia",
@@ -591,9 +591,9 @@ btn_borrar_wishlist.addEventListener("click", () => {
             style: {
                 background: "linear-gradient(to right, #eecda3, #ef629f)",
             },
-            }).showToast();
+        }).showToast();
     }
-    
+
 });
 
 // finalizacion de compra
@@ -604,45 +604,99 @@ const divFORMULARIO = document.getElementById("formulario");
 
 const renderFormulario = () => {
     divFORMULARIO.innerHTML = ` `
-        divFORMULARIO.innerHTML = `
+    divFORMULARIO.innerHTML = `
     <h2 class="titulo_dos">¡Finalizá tu compra!</h2>
     <div class="formulario">
     <form action="" method="" enctype="">
     <div class="formulario">
         <label for="nombre">Nombre</label>
-        <input type="text" id="nombre" class="" required="text" name="nombre"placeholder="Tu nombre">
-    </div>
-
-    <div class="formulario">
-        <label for="apellido">Apellido</label>
-        <input type="text" id="apellido" class="" required="text" name="apellido" placeholder="Tu apellido">
+        <input type="text" id="nombre" class="nombre" required="text" name="nombre"placeholder="Tu nombre">
     </div>
 
     <div class="formulario">
         <label for="email">Tu Email</label>
-        <input type="email" id="email" class="" equired="email" placeholder="Tu Email">
+        <input type="email" id="email" class="email" required="email" placeholder="Tu Email">
     </div>
 
     <div class="formulario">
         <label for="telefono">Telefono</label>
-        <input type="tel" id="telefono" class="" equired="telefono" placeholder="Tu telefono">
+        <input type="tel" id="telefono" class="telefono" required="tel" placeholder="Tu telefono">
     </div>
 
     <div class="formulario">
         <label for="direccion">Direccion</label>
-        <input type="text" id="direccion" class="" required="text" name="direccion" placeholder="Tu direccion">
+        <input type="text" id="direccion" class="direccion" required="text" name="direccion" placeholder="Tu direccion">
+    </div>
+    <div>
+        <h6>Datos de tarjeta</h6>
+    </div>
+    <div class="formulario">
+            <label for="num_tarjeta">Numero de tarjeta</label>
+            <input id="num_tarjeta" type="text" class="card-number-input" placeholder="Tu tarjeta">
+        </div>
+        <div class="formulario">
+            <label for="titular">Titular</label>
+            <input type="text" id="titular" class="card-holder-input" placeholder="Titular de la tarjeta">
+        </div>
+        <div class="formulario">
+            <div class="inputBox">
+                <label>Mes de Vencimiento</label>
+                <select id="month" class="month-input">
+                    <option value="month" selected disabled>Mes</option>
+                </select>
+                <label>Año de Vencimiento</label>
+                <select id="year" class="year-input">
+                    <option value="year" selected disabled>Año</option>                
+                </select>
+            </div>
+            <div class="formulario">
+                <label for="cod_seguridad" for="titular">Codigo de Seguridad</label>
+                <input type="text" id="cod_seguridad" class="cvv-input" placeholder="Cod seguridad">
+            </div>
+        </div>
+        <input type="submit" value="enviar" class="submit-btn" id="btnEnviar">
+    <div class="container">
+
+    <div class="card-container">
+
+        <div class="front">
+            <div class="image">
+                <img src="./imagenes/chip.png" alt="chip_tarjeta">
+                <img class="cardLogo" src="" alt="">
+            </div>
+            <div class="card-number-box">0000 0000 0000 0000</div>
+            <div class="flexbox">
+                <div class="box">
+                    <span>Titular</span>
+                    <div class="card-holder-name">nombre completo</div>
+                </div>
+                <div class="box">
+                    <span>Vencimiento</span>
+                    <div class="expiration">
+                        <span class="exp-month">mm</span>
+                        <span class="exp-year">aa</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="back">
+            <div class="stripe"></div>
+            <div class="box">
+                <span>Codigo de Seguridad</span>
+                <div class="cvv-box"></div>
+                <img class="cardLogo" src="" alt="">
+            </div>
+        </div>
+        
+    </form>
     </div>
     
     <div id="total_real">
-
     </div>
-
-    <div>
-        <input id="btn_formulario" class="boton" type="submit" value="Finalizar Compra">
-    </div>
-    </form>
-    </div>`;
     
+    </div>`;
+
 };
 
 
@@ -672,22 +726,120 @@ const renderCompra = () => {
 
 btn_fin_compra.addEventListener("click", () => {
     const carrito_storage = JSON.parse(sessionStorage.getItem("carrito"));
-    if(carrito_storage.length > 0) {
-    divFORMULARIO.innerHTML = `<h2 class="titulo_dos">¡Finalizá tu compra!</h2>`
-    renderFormulario()
-    renderCompra();
-    let total_2 = document.getElementById("total_real");
-    total_p(total_2);
-    const btn_formulario = document.getElementById("btn_formulario");
-    /*btn_formulario.addEventListener("click", () => {
-        swal.fire({
-            title: "¡Gracias por su compra!",
-            icon: "success",
-            text: "Se ha finalizado su compra con exito",
-            confirmbuttontext: "Gracias"
+    if (carrito_storage.length > 0) {
+        divFORMULARIO.innerHTML = `<h2 class="titulo_dos">¡Finalizá tu compra!</h2>`
+        renderFormulario()
+        renderCompra();
+        let total_2 = document.getElementById("total_real");
+        total_p(total_2);
+        const selectYear = document.querySelector('#year');
+        const selectMonth = document.querySelector('#month');
+        const nombre_usuario = document.querySelector(".nombre")
+        const email_usuario = document.querySelector(".email")
+        const telefono_usuario = document.querySelector(".telefono")
+        const direccion_usuario = document.querySelector(".direccion")
+        const nombreTitular = document.querySelector('.card-holder-input');
+        const numeroTarjeta = document.querySelector('.card-number-input');
+        const mesVencimiento = document.querySelector('.month-input');
+        const anioVencimiento = document.querySelector('.year-input');
+        const cvv = document.querySelector('.cvv-input');
+        const btnEnviar = document.querySelector('#btnEnviar');
+        const years = [2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030];
+        const months = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
+
+        years.forEach(element => {
+            let option = `<option>${element}</option>`;
+            selectYear.innerHTML += option;
+        });
+
+        months.forEach(element => {
+            let option = `<option>${element}</option>`
+            selectMonth.innerHTML += option;
+        });
+
+        numeroTarjeta.addEventListener('input', () => {
+            document.querySelector('.card-number-box').innerText = numeroTarjeta.value;
+        });
+
+        nombreTitular.addEventListener('input', () => {
+            document.querySelector('.card-holder-name').innerText = nombreTitular.value;
+        });
+
+        mesVencimiento.oninput = () => {
+            document.querySelector('.exp-month').innerText = mesVencimiento.value;
+        }
+
+        anioVencimiento.oninput = () => {
+            document.querySelector('.exp-year').innerText = anioVencimiento.value;
+        }
+
+        cvv.oninput = () => {
+            document.querySelector('.cvv-box').innerText = cvv.value;
+        }
+
+        cvv.onmouseenter = () => {
+            document.querySelector('.front').style.transform = 'perspective(1000px) rotateY(-180deg)';
+            document.querySelector('.back').style.transform = 'perspective(1000px) rotateY(0deg)';
+        }
+
+        cvv.onmouseleave = () => {
+            document.querySelector('.front').style.transform = 'perspective(1000px) rotateY(0deg)';
+            document.querySelector('.back').style.transform = 'perspective(1000px) rotateY(180deg)';
+        }
+
+        let cleave = new Cleave(numeroTarjeta, {
+            creditCard: true,
+            onCreditCardTypeChanged: (type) => {
+                const logos = document.querySelectorAll('.cardLogo');
+                logos.forEach(element => {
+                    element.src = `./imagenes/${type}.png`
+                })
+            }
         })
-        sessionStorage.removeItem("carrito");
-    })*/
-    } 
-    
+
+        btnEnviar.addEventListener('click', (event) => {
+            event.preventDefault();
+            const data = {
+                nombre_usuario: nombre_usuario.value,
+                email: email_usuario.value,
+                telefono: telefono_usuario.value,
+                direccion: direccion_usuario.value,
+                nombre_titular: nombreTitular.value,
+                numeroTarjeta: numeroTarjeta.value,
+                mes: mesVencimiento.value,
+                anio: anioVencimiento.value,
+                cvv: cvv.value
+            };
+
+            Swal.fire({
+                title: '¿Deseas guardar tus datos?',
+                showCancelButton: true,
+                confirmButtonText: 'Guardar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    localStorage.setItem('data', JSON.stringify(data))
+                    Swal.fire('Se guardaron los datos, ¡Gracias por su compra!', '', 'success');
+                    setTimeout(() => {
+                        sessionStorage.removeItem("carrito");
+                        sessionStorage.removeItem("wishlist");
+                        location.reload();
+                    }, 2000);
+
+                } else if (result.dismiss === Swal.DismissReason.cancel) {
+                    Swal.fire(
+                        'Los datos no se guardaron. ¡Gracias por su compra!',
+                        '',
+                        'info'
+                    );
+                    setTimeout(() => {
+                        sessionStorage.removeItem("carrito");
+                        sessionStorage.removeItem("wishlist");
+                        location.reload();
+                    }, 2000);
+
+                }
+            })
+        })
+    }
+
 });
