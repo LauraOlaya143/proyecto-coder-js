@@ -438,14 +438,12 @@ radioAllDolls.addEventListener("click", () => {
 const busqueda = document.querySelector("#buscador");
 const btn_busqueda = document.querySelector("#boton_buscar");
 const no_producto = () => {
-    Toastify({
-        text: "No se ha encontrado ningun producto, porfavor intentelo de nuevo.",
-        duration: 3000,
-        close: true,
-        style: {
-            background: "linear-gradient(to right, #eecda3, #ef629f)",
-        },
-    }).showToast();
+    swal.fire ({
+        title: "No se ha encontrado ningun producto",
+        text: "porfavor intentelo de nuevo",
+        icon: "error",
+        confirmButtonText: "Ok"
+    })
 }
 
 const filtrar_busqueda = () => {
@@ -541,14 +539,12 @@ const btn_borrar_wishlist = document.querySelector("#borrar_todo_wishlist");
 
 btn_borrar_carrito.addEventListener("click", () => {
     if (carrito_compras.length > 0) {
-        Toastify({
-            text: "¡Tu carrito se elimino con exito!",
-            duration: 3000,
-            close: true,
-            style: {
-                background: "linear-gradient(to right, #eecda3, #ef629f)",
-            },
-        }).showToast();
+        swal.fire ({
+            title: "¡Tu carrito se elimino con exito!",
+            text: "Ya no tienes ningun producto en tu carrito",
+            icon: "success",
+            confirmButtonText: "Ok"
+        })
         for (let i = carrito_compras.length; i > 0; i--) {
             carrito_compras.pop();
         }
@@ -556,42 +552,36 @@ btn_borrar_carrito.addEventListener("click", () => {
         render_carrito(carrito_compras, divCARRITO);
         total_p(total);
     } else {
-        Toastify({
-            text: "Su carrito ya esta vacio",
-            duration: 3000,
-            close: true,
-            style: {
-                background: "linear-gradient(to right, #eecda3, #ef629f)",
-            },
-        }).showToast();
+        swal.fire ({
+            title: "Su carrito ya esta vacio",
+            text: "No tienes nada en tu carrito",
+            icon: "info",
+            confirmButtonText: "Ok"
+        })
     }
 
 });
 
 btn_borrar_wishlist.addEventListener("click", () => {
     if (wishlist.length > 0) {
-        Toastify({
-            text: "¡Tu Wishlist se elimino con exito!",
-            duration: 3000,
-            close: true,
-            style: {
-                background: "linear-gradient(to right, #eecda3, #ef629f)",
-            },
-        }).showToast();
         for (let i = wishlist.length; i > 0; i--) {
             wishlist.pop();
         }
+        swal.fire ({
+            title: "¡Tu Wishlist se elimino con exito!",
+            text: "Ya no tienes ningun producto en tu wishlist",
+            icon: "success",
+            confirmButtonText: "Ok"
+        })
         sessionStorage.removeItem("wishlist");
         render_carrito(wishlist, divWISHLIST);
     } else {
-        Toastify({
-            text: "Su Wishlist ya esta vacia",
-            duration: 3000,
-            close: true,
-            style: {
-                background: "linear-gradient(to right, #eecda3, #ef629f)",
-            },
-        }).showToast();
+        swal.fire ({
+            title: "Su Wishlist ya esta vacia",
+            text: "No tienes nada en tu wishlist",
+            icon: "info",
+            confirmButtonText: "Ok"
+        })
     }
 
 });
