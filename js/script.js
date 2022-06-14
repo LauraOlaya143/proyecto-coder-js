@@ -600,38 +600,42 @@ const renderFormulario = () => {
     <form action="" method="" enctype="">
     <div class="formulario">
         <label for="nombre">Nombre</label>
-        <input type="text" id="nombre" class="nombre" required="text" name="nombre"placeholder="Tu nombre">
+        <input type="text" id="nombre" class="formulario_input nombre " required="text" name="nombre"placeholder="Tu nombre">
     </div>
 
     <div class="formulario">
         <label for="email">Tu Email</label>
-        <input type="email" id="email" class="email" required="email" placeholder="Tu Email">
+        <input type="email" id="email" class="formulario_input email" required="email" placeholder="Tu Email">
     </div>
 
     <div class="formulario">
         <label for="telefono">Telefono</label>
-        <input type="tel" id="telefono" class="telefono" required="tel" placeholder="Tu telefono">
+        <input type="tel" id="telefono" class="formulario_input telefono" required="tel" placeholder="Tu telefono">
     </div>
 
     <div class="formulario">
         <label for="direccion">Direccion</label>
-        <input type="text" id="direccion" class="direccion" required="text" name="direccion" placeholder="Tu direccion">
+        <input type="text" id="direccion" class="formulario_input direccion" required="text" name="direccion" placeholder="Tu direccion">
     </div>
     <div>
-        <h6>Datos de tarjeta</h6>
+        <h6 class="subtitulos_2">Datos de tarjeta</h6>
     </div>
     <div class="formulario">
             <label for="num_tarjeta">Numero de tarjeta</label>
-            <input id="num_tarjeta" type="text" class="card-number-input" placeholder="Tu tarjeta">
+            <input id="num_tarjeta" type="text" class="formulario_input card-number-input" placeholder="Tu tarjeta">
         </div>
         <div class="formulario">
             <label for="titular">Titular</label>
-            <input type="text" id="titular" class="card-holder-input" placeholder="Titular de la tarjeta">
+            <input type="text" id="titular" class="formulario_input card-holder-input" placeholder="Titular de la tarjeta">
+        </div>
+        <div class="formulario">
+            <label for="cod_seguridad">Codigo de Seguridad</label>
+            <input type="text" id="cod_seguridad" class="formulario_input cvv-input" placeholder="Cod seguridad">
         </div>
         <div class="formulario">
             <div class="inputBox">
                 <label>Mes de Vencimiento</label>
-                <select id="month" class="month-input">
+                <select id="month" class="month-input input_seleccion">
                     <option value="month" selected disabled>Mes</option>
                 </select>
                 <label>Año de Vencimiento</label>
@@ -639,12 +643,12 @@ const renderFormulario = () => {
                     <option value="year" selected disabled>Año</option>                
                 </select>
             </div>
-            <div class="formulario">
-                <label for="cod_seguridad" for="titular">Codigo de Seguridad</label>
-                <input type="text" id="cod_seguridad" class="cvv-input" placeholder="Cod seguridad">
-            </div>
+            
         </div>
-        <input type="submit" value="enviar" class="submit-btn" id="btnEnviar">
+        <div >
+        <h6 id="total_real" class="subtitulos_2">
+        </div>
+        <input type="submit" value="Enviar" class="btn_formulario submit-btn" id="btnEnviar">
     <div class="container">
 
     <div class="card-container">
@@ -682,8 +686,7 @@ const renderFormulario = () => {
     </form>
     </div>
     
-    <div id="total_real">
-    </div>
+    
     
     </div>`;
 
@@ -695,8 +698,8 @@ const renderCompra = () => {
     const carrito_storage = JSON.parse(sessionStorage.getItem("carrito"));
     divFINCOMPRA.innerHTML = `<h6 class="titulo_dos">Tu Compra:</h6>`
     for (let element of carrito_storage) {
-        let carta = document.createElement("div");
-        carta.innerHTML = `
+        let auto3 = document.createElement("div");
+        auto3.innerHTML = `
         <div class="card mb-3 card_3" style="max-width: 540px;">
         <div class="row g-0">
             <div class="col-md-4">
@@ -710,7 +713,7 @@ const renderCompra = () => {
             </div>
         </div>
         </div>`
-        divFINCOMPRA.appendChild(carta);
+        divFINCOMPRA.appendChild(auto3);
     }
 }
 

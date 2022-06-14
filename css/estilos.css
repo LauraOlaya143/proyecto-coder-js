@@ -339,6 +339,7 @@ header {
     color: #ff75ba;
     border:#ff75ba 2px solid;
     background-color: rgb(255, 247, 251);
+    letter-spacing: 2px;
 }
 
 .input_busqueda {
@@ -384,6 +385,11 @@ header {
     font-size: 30px;
 }
 
+.subtitulos_2 {
+    margin: 20px;
+    margin-left: 150px;
+}
+
 .btn_bs {
     background: #ffafbd;
     background: linear-gradient(to right, #ffafbd, #ffceb1);
@@ -419,8 +425,29 @@ header {
     border: 2px solid #ffbdc8
 }
 
+.btn_formulario {
+    font-size: 22px;
+    width: 100px;
+    padding: 5px;
+    border:#862451 2px solid;
+    color:#8f265b;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: rgb(255, 230, 241);
+    margin-top: 20px;
+    margin-left: 150px;
+    transition: all 0.5s;
+}
+
+.btn_formulario:hover {
+    color: #ff75ba;
+    border:#ff75ba 2px solid;
+    background-color: rgb(255, 241, 247);
+    letter-spacing: 2px;
+}
+
 .container{
-    min-height: 50vh;
+    min-height: 48vh;
     background: rgba(0, 0, 0, 0);
     display: flex;
     align-items: center;
@@ -577,6 +604,10 @@ header {
         margin-right: 10px;
     }
 
+    .container {
+        min-height: 30vh;
+    }
+
     .card_3 {
         width: 100%;
         margin: 0 auto;
@@ -634,6 +665,11 @@ header {
         width: 140px;
         height: 30px;
         margin-bottom: 10px;
+        margin-left: 20px;
+    }
+
+    .btn_busqueda {
+        margin-left: 50px;
     }
 
     .subtitulo {
@@ -642,15 +678,45 @@ header {
     }
 
     .iconos {
-        font-size: 1rem;
+        font-size: 18px;
         padding: 10px;
         color:rgb(255, 246, 235);
         transition: all 0.5s;
     }
 
+    .input_seleccion {
+        margin-bottom: 20px;
+    }
+
+    .subtitulos_2 {
+        margin-left: 60px;
+    }
+    
+    .btn_formulario {
+        margin-left: 60px;
+    }
+
     .btn_bs_3 {
         font-size: 18px;
-        margin-top: 120px;
+        margin-top: 20px;
         transition: all 0.5s;
+    }
+
+    .formulario {
+        margin: 0 auto;
+        margin-left: 20px;
+    }
+
+    .formulario_input {
+        width: 200px;
+    }
+
+    .container{
+        min-height: 0px;
+        padding-bottom: 0px;
+    }
+
+    .card-container {
+        display: none;
     }
 }
