@@ -41,6 +41,11 @@ li a {
     margin: 0 auto;
 }
 
+.enlaces_contenedor {
+    display: flex;
+    flex-direction: column;
+}
+
 .enlace_compra {
     text-decoration: none;
     font-weight: bold;
@@ -51,7 +56,8 @@ li a {
     background-color: rgb(255, 235, 235);
     border-radius: 5px;
     padding: 6px;
-    margin-left: 10px;
+    width: 80%;
+    margin-top: 5px;
     transition: all 0.5s;
 }
 
@@ -129,14 +135,19 @@ header {
     transform: translateX(0);
 }
 
-.categorias_enlaces {
-    text-decoration: none;
+.categoria {
+    background-color: rgb(255, 235, 235);
+    padding: 2px;
+    font-weight: bold;
     color: rgb(101, 38, 55);
+    border: rgb(101, 38, 55) 2px solid;
+    border-radius: 5px;
     transition: all 0.5s;
 }
 
-.categorias_enlaces:hover {
-    color:rgb(255, 72, 121)
+.categoria:hover {
+    color: #ff75ba;
+    border:#ff75ba 2px solid;
 }
 
 .iconos {
@@ -324,6 +335,22 @@ header {
     cursor: pointer;
 }
 
+.btn_eliminarproducto {
+    background-color:rgba(255, 255, 255, 0);
+    border: transparent solid 1px;
+    color:#8f265b;
+    font-weight: bold;
+    border-radius: 20px;
+    background-color: rgba(15, 15, 15, 0);
+    width: 30px;
+    height: 30px;
+    transition: all 0.5s;
+}
+
+.btn_eliminarproducto:hover {
+    color: #ff75ba;
+}
+
 .btn_busqueda {
     border:#862451 2px solid;
     color:#8f265b;
@@ -340,6 +367,23 @@ header {
     border:#ff75ba 2px solid;
     background-color: rgb(255, 247, 251);
     letter-spacing: 2px;
+}
+
+.btn_filtro {
+    border:#862451 2px solid;
+    color:#8f265b;
+    font-weight: bold;
+    border-radius: 20px;
+    background-color: rgb(255, 212, 231);
+    width: 80px;
+    height: 30px;
+    transition: all 0.5s;
+}
+
+.btn_filtro:hover {
+    color: #ff75ba;
+    border:#ff75ba 2px solid;
+    background-color: rgb(255, 247, 251);
 }
 
 .input_busqueda {

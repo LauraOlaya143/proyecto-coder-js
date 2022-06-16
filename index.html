@@ -29,46 +29,17 @@
         <nav>
             <div class="header__contenedor">
                 <div class="enlaces_contenedor">
-                    <a class="enlace_compra" href="#sidebar">CATEGORIAS</a>
-                    <ul class="categorias" id="sidebar">
-                        <li>
-                            <div>
-                                <input type="radio" name="categorias-filtro" id="alldolls" class="eleccion"
-                                    value="alldolls" checked>
-                                <label for="alldolls" class="estilo_eleccion">Todos</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="categorias-filtro" id="monsterhigh" class="eleccion"
-                                    value="monsterhigh">
-                                <label for="monsterhigh" class="estilo_eleccion">Monster High</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="categorias-filtro" id="everafterhigh" class="eleccion"
-                                    value="everafterhigh">
-                                <label for="everafterhigh" class="estilo_eleccion">Ever After High</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="categorias-filtro" id="rainbowhigh" class="eleccion"
-                                    value="rainbowhigh">
-                                <label for="rainbowhigh" class="estilo_eleccion">Rainbow High</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="categorias-filtro" id="barbie" class="eleccion"
-                                    value="barbie">
-                                <label for="barbie" class="estilo_eleccion">Barbie</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="categorias-filtro" id="coleccionables" class="eleccion"
-                                    value="coleccionables">
-                                <label for="coleccionables" class="estilo_eleccion">Coleccionables</label>
-                            </div>
-                        </li>
-                        <li>
-                            <a class="categorias_enlaces" href="#">
-                                <i class="fas fa-times-circle"></i>
-                            </a>
-                        </li>
-                    </ul>
+                    <div>
+                        <select id="categorias" class="categoria">
+                            <option value="">CATEGORIAS</option>
+                            <option value="monster high">Monster High</option>
+                            <option value="ever after high">Ever After High</option>
+                            <option value="rainbow high">Rainbow High</option>
+                            <option value="barbie">Barbie</option>
+                            <option value="coleccionables">Coleccionables</option>
+                        </select>
+                    <button id="filtrar" class="btn_filtro">Filtrar</button>
+                    </div>
                     <a href="#terminar_compra" class="enlace_compra">TERMINAR COMPRA</a>
                 </div>
                 <div>
@@ -101,7 +72,7 @@
 
                 </div>
                 <div class="contenedor_img">
-                    <img id="fondoprincipal" class="img" src="imagenes/fondo2.png" />
+                    <a href="index.html"><img id="fondoprincipal" class="img" src="imagenes/fondo2.png" /> </a>
                 </div>
         </div>
         </section>
