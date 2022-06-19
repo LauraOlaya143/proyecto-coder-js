@@ -178,21 +178,105 @@ function filtro_muñecas(array) {
     if (!doll) {
         return array;
     } else {
-        result = array.filter((element) => element.categoria == doll);
+        result = array.filter((e) => e.categoria == doll);
         return result;
     }
-    
+}
+
+const renderMuñecas_filtro = (array1, array2) => {
+    divID.innerHTML = " ";
+    for (let element of array1) {
+        let carta = document.createElement("div");
+        carta.className = "card";
+
+        const body = document.createElement("div");
+        body.classList.add("items");
+
+        const contenedor = document.createElement("div");
+        contenedor.classList.add("info");
+
+        const img = document.createElement("img");
+        img.classList.add("cajaGrid__img");
+        img.setAttribute("src", element.img);
+
+        const titulo = document.createElement("h4");
+        titulo.textContent = element.nombre;
+
+        const precio = document.createElement("h4");
+        precio.textContent = `${element.precio} $`;
+
+        const descripcion = document.createElement("p");
+        descripcion.textContent = element.descripcion;
+
+        const boton1 = document.createElement("button");
+        boton1.classList.add("botones");
+        boton1.addEventListener("click", () => {
+            carrito_compras.push(array2[element.id - 1]);
+            Toastify({
+                text: "Su producto se ha agregado al carrito con exito",
+                duration: 3000,
+                close: true,
+                style: {
+                    background: "linear-gradient(to right, #eecda3, #ef629f)",
+                },
+            }).showToast();
+            sessionStorage.removeItem("carrito");
+            sessionStorage.setItem("carrito", JSON.stringify(carrito_compras));
+            render_carrito(carrito_compras, divCARRITO, "carrito");
+            total_p(total);
+        });
+        boton1.innerHTML = `<button id="btn${element.id}" class="btn_compra btn_carrito"><i class="fas fa-cart-plus iconos_2"></i></button>`;
+
+        const boton2 = document.createElement("button");
+        boton2.classList.add("botones--2");
+        boton2.addEventListener("click", () => {
+            wishlist.push(array2[element.id - 1]);
+            Toastify({
+                text: "Su producto se ha agregado a la wishlist con exito",
+                duration: 3000,
+                close: true,
+                style: {
+                    background: "linear-gradient(to right, #eecda3, #ef629f)",
+                },
+            }).showToast();
+            sessionStorage.removeItem("wishlist");
+            sessionStorage.setItem("wishlist", JSON.stringify(wishlist));
+            render_carrito(wishlist, divWISHLIST, "wishlist");
+        });
+        boton2.innerHTML = `<button id="btn${element.id_2}" class="btn_compra"><i class="fas fa-star iconos_2"></i></button>`;
+
+        contenedor.appendChild(img);
+        contenedor.appendChild(titulo);
+        contenedor.appendChild(precio);
+        contenedor.appendChild(descripcion);
+        contenedor.appendChild(boton1);
+        contenedor.appendChild(boton2);
+
+        carta.appendChild(body);
+        carta.appendChild(contenedor);
+        divID.appendChild(carta);
+    }
+};
+
+async function filtrar() {
+    const respuesta = await fetch('./js/productos.json');
+    const productos = await respuesta.json();
+    let doll = btn_categorias.value;
+    let arrayfiltrado = productos.filter((e) => e.categoria == doll)
+    renderMuñecas_filtro(arrayfiltrado, productos);
 }
 
 let btn_filtro = document.querySelector('#filtrar');
 
 btn_filtro.addEventListener('click', () => {
+    filtrar()
     btn_categorias.value == "" && cambiarimg("./imagenes/fondo2.png");
     btn_categorias.value == "monster high" && cambiarimg("./imagenes/fondo2_versionMH.png");
     btn_categorias.value == "ever after high" && cambiarimg("./imagenes/fondo2_versionEAH.png");
     btn_categorias.value == "rainbow high" && cambiarimg("./imagenes/fondo2_versionRH.png");;
     btn_categorias.value == "barbie" && cambiarimg("./imagenes/fondo2_versionB.png");
     btn_categorias.value == "coleccionables" && cambiarimg("./imagenes/fondo2_versioncollector.png");
+    
 })
 
 // barra de busqueda
