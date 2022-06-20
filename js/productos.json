@@ -52,7 +52,7 @@
     {
         "id": 6,
         "id_2": 106,
-        "nombre": "Barbie Mariposa & the fairy princess",
+        "nombre": "Barbie Mariposa & the Fairy Princess",
         "saga": "Barbie",
         "categoria": "barbie",
         "img": "./imagenes/mariposa_barbie.jpg",
@@ -62,7 +62,7 @@
     {
         "id": 7,
         "id_2": 107,
-        "nombre": "Violet Willow - Purple Fashion - serie 1",
+        "nombre": "Violet Willow - Purple Fashion - Serie 1",
         "saga": "Rainbow High",
         "categoria": "rainbow high",
         "img": "./imagenes/violet_rh.jpg",
@@ -72,7 +72,7 @@
     {
         "id": 8,
         "id_2": 108,
-        "nombre": "Bella Parker - Pink Fashion - serie 2",
+        "nombre": "Bella Parker - Pink Fashion - Serie 2",
         "saga": "Rainbow High",
         "categoria": "rainbow high",
         "img": "./imagenes/bella_rh.jpg",
@@ -192,7 +192,7 @@
     {
         "id": 20,
         "id_2": 1020,
-        "nombre": "Daphne Minton - Mint Fashion - serie 3",
+        "nombre": "Daphne Minton - Mint Fashion - Serie 3",
         "saga": "Rainbow High",
         "categoria": "rainbow high",
         "img": "./imagenes/minton_rh.jpg",
@@ -202,11 +202,101 @@
     {
         "id": 21,
         "id_2": 1021,
-        "nombre": "Cerise Wolf - Ever After High Collector SDCC",
+        "nombre": "Cerise Wolf - Ever After High Collector SDCC 2014",
         "saga": "Coleccionables",
         "categoria": "coleccionables",
         "img": "./imagenes/collector_cerise.jpg",
         "descripcion": "Muñeca Ever After High basada en la hija del Gran Lobo Feroz.",
+        "precio": 90
+    },
+    {
+        "id": 22,
+        "id_2": 1022,
+        "nombre": "Skyler Bradshaw - Blue Fashion - Serie 1",
+        "saga": "Rainbow High",
+        "categoria": "rainbow high",
+        "img": "./imagenes/skyler_rh.jpg",
+        "descripcion": "Muñeca Rainbow high del 2020 de color azul.",
+        "precio": 35
+    },
+    {
+        "id": 23,
+        "id_2": 1023,
+        "nombre": "Amaya Raine - Rainbow Fashion - Serie 2",
+        "saga": "Rainbow High",
+        "categoria": "rainbow high",
+        "img": "./imagenes/amaya_rh.jpg",
+        "descripcion": "Muñeca Rainbow high del 2020 de color arcoiris.",
+        "precio": 35
+    },
+    {
+        "id": 24,
+        "id_2": 1024,
+        "nombre": "Sheryl Meyer - Rainbow Fashion - Serie 3_",
+        "saga": "Rainbow High",
+        "categoria": "rainbow high",
+        "img": "./imagenes/sheryl_rh.jpg",
+        "descripcion": "Muñeca Rainbow high del 2020 de color calendula(amarillo).",
+        "precio": 35
+    },
+    {
+        "id": 25,
+        "id_2": 1025,
+        "nombre": "Princesa Alexa - Barbie y la Puerta Secreta",
+        "saga": "Barbie",
+        "categoria": "barbie",
+        "img": "./imagenes/barbie_la_puerta_secreta.jpg",
+        "descripcion": "Muñeca Barbie del 2014 basada en la protagonista, la princesa Alexa.",
+        "precio": 15
+    },
+    {
+        "id": 26,
+        "id_2": 1026,
+        "nombre": "Liana - Barbie y el Castillo de Diamante",
+        "saga": "Barbie",
+        "categoria": "barbie",
+        "img": "./imagenes/barbie_castillo_de_diamantes.jpg",
+        "descripcion": "Muñeca Barbie del 2008 basada en la princesa Liana.",
+        "precio": 15
+    },
+    {
+        "id": 27,
+        "id_2": 1027,
+        "nombre": "Romy - Barbie y la Puerta Secreta",
+        "saga": "Barbie",
+        "categoria": "barbie",
+        "img": "./imagenes/barbie_sirena.jpeg",
+        "descripcion": "Muñeca Barbie del 2014 basada en la sirena Romy.",
+        "precio": 15
+    },
+    {
+        "id": 28,
+        "id_2": 1028,
+        "nombre": "Afrodita - Barbie Exclusive 2009 GOLD Fantasy Series",
+        "saga": "Coleccionables",
+        "categoria": "coleccionables",
+        "img": "./imagenes/barbie_afrodita.png",
+        "descripcion": "Muñeca Barbie coleccionable basada en la diosa griega Afrodita.",
+        "precio": 90
+    },
+    {
+        "id": 29,
+        "id_2": 1029,
+        "nombre": "Raven Queen - Ever After High Spellbinding SDCC 2015",
+        "saga": "Coleccionables",
+        "categoria": "coleccionables",
+        "img": "./imagenes/raven_queen_collector.jpg",
+        "descripcion": "Muñeca creada para la Comicon de San Diego, Hija de la reina malvada.",
+        "precio": 90
+    },
+    {
+        "id": 30,
+        "id_2": 1030,
+        "nombre": "The Museum Collection - Vicent van Gogh",
+        "saga": "Coleccionables",
+        "categoria": "coleccionables",
+        "img": "./imagenes/barbie_van_gogh.jpg",
+        "descripcion": "Muñeca Barbie de coleccion inspirada en la pintura de la noche estrellada de van Gogh.",
         "precio": 90
     }
 ]

@@ -270,6 +270,9 @@ let btn_filtro = document.querySelector('#filtrar');
 
 btn_filtro.addEventListener('click', () => {
     filtrar()
+    if (btn_categorias.value == ""){
+        traerDatos()
+    }
     btn_categorias.value == "" && cambiarimg("./imagenes/fondo2.png");
     btn_categorias.value == "monster high" && cambiarimg("./imagenes/fondo2_versionMH.png");
     btn_categorias.value == "ever after high" && cambiarimg("./imagenes/fondo2_versionEAH.png");

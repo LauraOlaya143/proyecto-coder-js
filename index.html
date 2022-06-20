@@ -6,12 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MY FAIRYTALE</title>
-    <link rel="icon" sizes="192x192" href="imagenes/icon.png">
+    <link rel="icon" sizes="192x192" href="imagenes/fondo2.png">
+    <!--Google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@1,400;1,700&family=Source+Sans+Pro:wght@400;600&display=swap"
+        rel="stylesheet">
     <!--fontawesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
         integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+    <!--AOS-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!--Boostrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!--toastify-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <!--hoja de estilos-->
     <link rel="stylesheet" href="css/estilos.css">
@@ -49,10 +59,12 @@
 
                 </div>
                 <div class="header__marca">
-                    <button type="button" class="btn-primary carrito_botones" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button type="button" class="btn-primary carrito_botones" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">
                         <i class="fas fa-cart-plus iconos"></i>
                     </button>
-                    <button type="button" class="btn-primary carrito_botones" data-bs-toggle="modal" data-bs-target="#wishlist">
+                    <button type="button" class="btn-primary carrito_botones" data-bs-toggle="modal"
+                        data-bs-target="#wishlist">
                         <i class="fas fa-star iconos"></i>
                     </button>
                 </div>
@@ -64,27 +76,26 @@
             <section class="main">
                 <div class="parrafo">
                     <h1 class="titulo">¡Te damos la bienvenida a My FairyTale!</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo eius ipsum ipsam, modi quae
-                        consectetur veniam quam! Suscipit velit veritatis doloremque impedit facere assumenda repellat
-                        harum, et non adipisci officia?
+                    <p class="texto">
+                        ¿Tuviste alguna vez un juguete que siempre deseaste de niño mas nunca tuviste? ¡ahora ese sueño
+                        se puede hacer realidad en nuestra pagina!
                     </p>
-
                 </div>
-                <div class="contenedor_img">
+                <div class="contenedor_img" data-aos="flip-left" data-aos-duration="1000">
                     <a href="index.html"><img id="fondoprincipal" class="img" src="imagenes/fondo2.png" /> </a>
                 </div>
         </div>
         </section>
         <section>
             <h2 class="titulo_dos">¡Mira nuestros productos!</h2>
-            <div id="contenedor" class="contenedor_cartas">
+            <div id="contenedor" class="contenedor_cartas" data-aos="fade-up"
+            data-aos-duration="2000">
 
             </div>
         </section>
-        <section >
-            <div id="terminar_compra" class="titulo_tres">
-                <h3>¿Deseas terminar tu compra?</h3>
+        <section>
+            <div id="terminar_compra">
+                <h3 class="titulo_tres">¿Deseas terminar tu compra?</h3>
             </div>
             <div class="main_2">
                 <!--Modal de carrito-->
@@ -107,8 +118,9 @@
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary btn_bs2"
                                         data-bs-dismiss="modal">Cerrar carrito</button>
-                                    <button id="borrar_todo" type="button" class="btn_bs btn btn-primary">Borrar Todo</button>
-                                    
+                                    <button id="borrar_todo" type="button" class="btn_bs btn btn-primary">Borrar
+                                        Todo</button>
+
                                 </div>
                             </div>
                         </div>
@@ -134,7 +146,8 @@
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary btn_bs2"
                                         data-bs-dismiss="modal">Cerrar</button>
-                                        <button id="borrar_todo_wishlist" type="button" class="btn_bs btn btn-primary">Borrar Todo</button>
+                                    <button id="borrar_todo_wishlist" type="button"
+                                        class="btn_bs btn btn-primary">Borrar Todo</button>
                                 </div>
                             </div>
                         </div>
@@ -147,7 +160,7 @@
                 <div id="formulario" class="contenedor_cartas">
 
                 </div>
-            
+
                 <div id="finalizar_compra" class="contenedor_cartas_2">
 
                 </div>
@@ -158,6 +171,10 @@
     <footer id="footer" class="footer">
         <h5 class="footer_letra">©2022 by Laura Sofia Olaya Isaza</h5>
     </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
     </script>
