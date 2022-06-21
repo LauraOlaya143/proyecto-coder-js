@@ -152,7 +152,7 @@ header {
 .iconos {
     font-size: 1.5rem;
     padding: 20px;
-    color:rgb(255, 246, 235);
+    color:rgb(255, 220, 236);
     transition: all 0.5s;
 }
 
@@ -450,6 +450,17 @@ header {
     border: 1.5px solid #ffbdc800;
 }
 
+.carrito_botones:focus {
+    background: #ffafbc00;
+    border: 1.5px solid #ffbdc800;
+    box-shadow:none;
+}
+
+/*.btn-check:focus+.btn-primary, .btn-primary:focus {
+    
+
+} */
+
 .subtitulo {
     width: 100%;
     font-size: 30px;
@@ -471,6 +482,11 @@ header {
     border: 1px solid #ffbdc8;
 }
 
+.btn_bs:focus {
+    border: 1px solid #ffbdc8;
+    box-shadow:none;
+}
+
 .btn_bs2 {
     background: #976f76;
     border: 1px solid #8f6a70;
@@ -479,6 +495,11 @@ header {
 .btn_bs2:hover {
     background: #784e55;
     border: 1px solid #6a484e;
+}
+
+.btn_bs2:focus {
+    border: 1px solid #ffbdc8;
+    box-shadow:none;
 }
 
 .btn_bs_3 {

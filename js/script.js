@@ -91,7 +91,7 @@ async function traerDatos() {
     renderProductos(productos);
 }
 
-traerDatos()
+traerDatos();
 
 // Carrito de forma fisica
 
@@ -171,7 +171,7 @@ let btn_categorias = document.querySelector('#categorias');
 
 function cambiarimg(source) {
     document.getElementById("fondoprincipal").src = source;
-}
+};
 
 function filtro_muñecas(array) {
     let doll = btn_categorias.value;
@@ -181,7 +181,7 @@ function filtro_muñecas(array) {
         result = array.filter((e) => e.categoria == doll);
         return result;
     }
-}
+};
 
 const renderMuñecas_filtro = (array1, array2) => {
     divID.innerHTML = " ";
@@ -269,10 +269,8 @@ async function filtrar() {
 let btn_filtro = document.querySelector('#filtrar');
 
 btn_filtro.addEventListener('click', () => {
-    filtrar()
-    if (btn_categorias.value == ""){
-        traerDatos()
-    }
+    filtrar();
+    btn_categorias.value == "" && traerDatos();
     btn_categorias.value == "" && cambiarimg("./imagenes/fondo2.png");
     btn_categorias.value == "monster high" && cambiarimg("./imagenes/fondo2_versionMH.png");
     btn_categorias.value == "ever after high" && cambiarimg("./imagenes/fondo2_versionEAH.png");
@@ -293,7 +291,7 @@ const no_producto = () => {
         icon: "error",
         confirmButtonText: "Ok"
     })
-}
+};
 
 const filtrar_busqueda = (array) => {
     divID.innerHTML = " ";
@@ -374,7 +372,7 @@ const filtrar_busqueda = (array) => {
             divID.appendChild(carta);
         }
     }
-    divID.innerHTML === " " && no_producto()
+    divID.innerHTML === " " && no_producto();
 };
 
 async function filtrar_productos() {
@@ -384,7 +382,7 @@ async function filtrar_productos() {
     }
 
 btn_busqueda.addEventListener("click", () => {
-    filtrar_productos()
+    filtrar_productos();
 });
 
 // boton para borrar todo el carrito
